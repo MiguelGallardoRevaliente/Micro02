@@ -30,53 +30,12 @@
 }
 
 .all{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15% 10%;
+    margin-top: 10%;
 }
 
-.texto p,h1,h2,h3,h4,h5,h6{
+.all h1{
+    font-size: 5.5vw;
     font-family: 'Italiana', sans-serif;
-
-}
-
-.text h1{
-    font-size: 50px;
+    margin-left: 2%;
     font-weight: 200;
-    margin: 0px;
-    padding-top: 0%;
-    margin-bottom: 0%;
-}
-
-.text p{
-    font-size: 20px;
-    font-weight: 200;
-    margin: 0px 0%;
-    padding-bottom: 0%;
-}
-
-.button{
-    bottom: 0px;
-
-}
-
-.button button{
-    background-color: #f72019;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 50px;
-    font-family: 'Italiana', sans-serif;
-    font-size: 50px;
-    font-weight: 200;
-    color: white;
-    cursor: pointer;
-    transition: 0.5s;
-    font-weight: bold;
-    bottom: 0px;
-}
-
-.estudiants,.professors{
-    width: 500px;
-    height: 300px;
 }
