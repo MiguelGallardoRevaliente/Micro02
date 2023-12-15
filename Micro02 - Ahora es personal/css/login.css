@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 html,body{
     height: 100%;
     width: 100%;
@@ -8,8 +9,6 @@ html,body{
     background-image: url(../img/right.png);
     background-size:cover ;
     background-repeat: no-repeat;
- 
-
 }
 
 
@@ -66,9 +65,36 @@ button{
     align-self: flex-end;
     padding:10px;
     width: 180px;
-    background-color: #F27F0C;
     font-size: 1.2em;
     font-weight: 700;
     border: none;
 }
 
+.btn {
+    margin: 0.5em;
+    background: #f27f0c;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:after {
+    content: "";
+    background: #f7ad19;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   button:hover:after {
+    transform: skewX(0deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }

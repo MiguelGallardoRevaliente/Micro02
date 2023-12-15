@@ -17,7 +17,7 @@
     <label for="password">CONTRASEÑA</label>
     <input type="password" id="password" name="password" required><br><br>
     
-    <button id="loginb">LOGIN</button>
+    <button class="btn">LOGIN</button>
   </form>
 </div>
 <div id="loginr">
