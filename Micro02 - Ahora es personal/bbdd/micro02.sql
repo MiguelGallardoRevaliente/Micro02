@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-01-2024 a las 18:57:46
+-- Tiempo de generación: 02-01-2024 a las 19:11:37
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `activitats` (
   `id_activitat` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `id_skillsActivitat` varchar(200) NOT NULL
+  `id_skillActivitat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE `alumnes` (
   `data_naixemente` date NOT NULL,
   `curs` varchar(50) NOT NULL,
   `foto_perfil` longblob NOT NULL,
-  `id_projectes` varchar(200) NOT NULL
+  `id_projecte` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -76,8 +76,8 @@ CREATE TABLE `projectes` (
   `id_projecte` int(11) NOT NULL,
   `modul` varchar(10) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `id_skillsProjecte` varchar(200) NOT NULL,
-  `id_activitats` varchar(200) NOT NULL
+  `id_skillProjecte` int(11) NOT NULL,
+  `id_activitat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -125,13 +125,15 @@ CREATE TABLE `skillsprojectes` (
 -- Indices de la tabla `activitats`
 --
 ALTER TABLE `activitats`
-  ADD PRIMARY KEY (`id_activitat`);
+  ADD PRIMARY KEY (`id_activitat`),
+  ADD KEY `activitats_id_skillactivitat_fr` (`id_skillActivitat`);
 
 --
 -- Indices de la tabla `alumnes`
 --
 ALTER TABLE `alumnes`
-  ADD PRIMARY KEY (`id_alumne`);
+  ADD PRIMARY KEY (`id_alumne`),
+  ADD KEY `alumnes_id_projecte_fr` (`id_projecte`);
 
 --
 -- Indices de la tabla `professors`
@@ -143,7 +145,9 @@ ALTER TABLE `professors`
 -- Indices de la tabla `projectes`
 --
 ALTER TABLE `projectes`
-  ADD PRIMARY KEY (`id_projecte`);
+  ADD PRIMARY KEY (`id_projecte`),
+  ADD KEY `projectes_id_activitat_fr` (`id_activitat`),
+  ADD KEY `projectes_id_skillprojecte_fr` (`id_skillProjecte`);
 
 --
 -- Indices de la tabla `skills`
@@ -214,6 +218,25 @@ ALTER TABLE `skillsprojectes`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `activitats`
+--
+ALTER TABLE `activitats`
+  ADD CONSTRAINT `activitats_id_skillactivitat_fr` FOREIGN KEY (`id_skillActivitat`) REFERENCES `skillsactivitats` (`id_skillActivitat`);
+
+--
+-- Filtros para la tabla `alumnes`
+--
+ALTER TABLE `alumnes`
+  ADD CONSTRAINT `alumnes_id_projecte_fr` FOREIGN KEY (`id_projecte`) REFERENCES `projectes` (`id_projecte`);
+
+--
+-- Filtros para la tabla `projectes`
+--
+ALTER TABLE `projectes`
+  ADD CONSTRAINT `projectes_id_activitat_fr` FOREIGN KEY (`id_activitat`) REFERENCES `activitats` (`id_activitat`),
+  ADD CONSTRAINT `projectes_id_skillprojecte_fr` FOREIGN KEY (`id_skillProjecte`) REFERENCES `skillsprojectes` (`id_skillProjecte`);
 
 --
 -- Filtros para la tabla `skillsactivitats`
