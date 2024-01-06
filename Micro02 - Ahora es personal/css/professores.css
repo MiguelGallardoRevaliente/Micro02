@@ -41,12 +41,16 @@
 
 }
 
+.text{
+    margin-bottom: 10%;
+}
+
 .text h1{
     font-size: 50px;
     font-weight: 200;
     margin: 0px;
     padding-top: 0%;
-    margin-bottom: 0%;
+    margin-bottom: 3%;
 }
 
 .text p{
@@ -79,7 +83,6 @@
 
 .estudiants, .professors{
     width: 500px;
-    height: 300px;
 }
 
 .Professors_Estudiants{
