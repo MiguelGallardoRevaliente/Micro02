@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Freehand&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Freehand&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Freehand&family=Italiana&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
+
+.header{
+    background-image: url(../img/headerbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-bottom: 0%;
+    padding-bottom: 20%;
+    margin-top: 170px;
+}
+
+.header h1{
+    text-align: center;
+    font-family: 'Italiana', sans-serif;
+    font-size: 170px;
+    margin: 0px;
+    padding-top: 10%;
+    margin-bottom: 5%;
+}
+
+.header h2{
+    text-align: center;
+    font-family: 'Italiana', sans-serif;
+    font-size: 70px; 
+    margin: 0px 12%;
+    padding-bottom: 0%;
+}
+
+.all{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.all h1{
+    font-size: 5.5vw;
+    font-family: 'Italiana', sans-serif;
+    margin-left: 2%;
+    font-weight: 200;
+}

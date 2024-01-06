@@ -1,54 +1,242 @@
 @import url('https://fonts.googleapis.com/css2?family=Freehand&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Freehand&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Freehand&family=Italiana&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
 
-html, body{
-    margin: 0px;
-    padding: 0px;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 170px;
-    background-color: #F7AD19;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.logo h1{
-    font-family: 'Lexend Deca', sans-serif;     
-    font-size: 65px;
-    font-weight: 200;
-    margin-left: 20px;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    gap: 50px;
-    font-family: 'Caveat', cursive;
-}
-
-nav h1{
-    font-size: 40px;
-    font-weight: 200;
-    margin-right: 30px;
-}
-
-nav h2{
-    font-size: 40px;
-    font-weight: 200;
-}
 .header{
     background-image: url(../img/headerbackground.png);
     background-size: cover;
-    height: 1000px;
     background-repeat: no-repeat;
+    background-position: top;
+    margin-bottom: 0%;
+    padding-bottom: 20%;
+    margin-top: 170px;
+}
+
+.header h1{
+    text-align: center;
+    font-family: 'Italiana', sans-serif;
+    font-size: 170px;
+    margin: 0px;
+    padding-top: 10%;
+    margin-bottom: 5%;
+}
+
+.header h2{
+    text-align: center;
+    font-family: 'Italiana', sans-serif;
+    font-size: 70px; 
+    margin: 0px 12%;
+    padding-bottom: 0%;
+}
+
+.all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15% 10%;
+}
+
+.texto p,h1,h2,h3,h4,h5,h6{
+    font-family: 'Italiana', sans-serif;
+
+}
+
+.text h1{
+    font-size: 50px;
+    font-weight: 200;
+    margin: 0px;
+    padding-top: 0%;
+    margin-bottom: 0%;
+}
+
+.text p{
+    font-size: 20px;
+    font-weight: 200;
+    margin: 0px 0%;
+    padding-bottom: 0%;
+}
+
+.button{
+    bottom: 0px;
+
+}
+
+.button a{
+    background-color: #f72019;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    font-family: 'Italiana', sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    bottom: 0px;
+}
+
+.estudiants, .professors{
+    width: 500px;
+    height: 300px;
+}
+
+.Professors_Estudiants{
+    margin-top: 10%;
+}
+
+.Professors_Projectes{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.intro h2{
+    font-size: 75px;
+    font-weight: 200;
+    margin: 0px;
+    margin-left: 7%;
+    padding-top: 0%;
+    margin-bottom: 0%;
+}
+
+.estudiantes{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 5%;
+    align-items: center;
+}
+
+.eleccion{
+    display: flex;
+    justify-content: center;
+    margin: 0% 0%;
+    gap: 50px;
+    align-items: center;
+}
+
+.scroll{
+    padding: 10px 120px;
+    margin: 10% 0%;
+    border: 1px solid #868180;
+}
+
+.botones{
+    display: flex;
+    gap: 50px;
+}
+
+.botones a{
+    background-color: #9FE7F5;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    bottom: 0px;
+    box-shadow: 0px 4px 4px  gray;
+}
+
+.importar{
+    background-color: #053F5C !important;
+   color: white !important;
+}
+
+.estudiant{
+    margin: 5% 5%;
+    height: 550px;
+    background-color: #429EBD;
+}
+
+.l-1 a{
+    background-color: #053F5C !important;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    bottom: 0px;
+    box-shadow: 0px 4px 4px  gray;
+}
+
+.l-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0% 15%;
+}
+
+.l-2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 4%;
+    margin: 0% 15%;
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+.l-2 input[type="text"] {
+    width: 300px;
+    height:150px;
+}
+
+.b-skills{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.b-alumnes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.escollir a{
+    background-color: #67CCFF;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    bottom: 0px;
+    box-shadow: 0px 4px 4px  gray;
+    letter-spacing: 3px;
+}
+
+.formulari label{
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+}
+
+.formulari p{
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
 }
