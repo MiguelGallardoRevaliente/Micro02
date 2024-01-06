@@ -16,8 +16,8 @@
             <h1>PROFESSORS</h1>
         </div>
         <nav>
-           <a href="indexP.html">Home</a>
-            <?php
+        <button id="home" name="home">Home</button>
+        <?php
             include "connexio.php";
             $sql = "SELECT nom FROM professors where id_professor = 1";
             $nom = mysqli_query($conn, $sql);
@@ -42,11 +42,19 @@
                 <div class="scroll"></div>
             </div>
             <div class="botones">
-                <a href="">Crear</a>
-                <a href="">Modificar</a>
-                <a href="">Borrar</a>
-                <a class="importar" href="">Importar</a>
+            <form method="post">
+                    <button id="crear" name="crear">Crear</button> 
+                    <button id="modificar" name="modificar">Modificar</button>
+                    <button id="borrar" name="borrar">Borrar</button>
+                    <button class="importar" id="importar" name="importar">Importar</button>
+                </form>
             </div>
+            <?php
+        if (isset($_POST['crear'])) {
+            header("Location: Professors-Estudiants.php");
+        }
+        ?>
+            
         </div>
         <div class="estudiant"></div>
 

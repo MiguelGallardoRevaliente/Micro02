@@ -16,9 +16,10 @@
             <h1>PROFESSORS</h1>
         </div>
         <nav>
-           <h1>Home</h1>
-           <h2>(NombreProfe)</h2>
-            <button>Log Out</button>
+        <form method="post">
+                <button id="home" name="home">Home</button>
+        </form>        
+        <h2>(NombreProfe)</h2>
         </nav>
     </header>
     <div class="header">

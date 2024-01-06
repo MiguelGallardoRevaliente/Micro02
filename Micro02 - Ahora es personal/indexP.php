@@ -16,8 +16,11 @@
             <h1>PROFESSORS</h1>
         </div>
         <nav>
-           <a href="indexP.html">Home</a>
-            <?php
+            <form method="post">
+                <button id="home" name="home">Home</button>
+            </form>
+        
+        <?php
             include "connexio.php";
             $sql = "SELECT nom FROM professors where id_professor = 1";
             $nom = mysqli_query($conn, $sql);
