@@ -65,7 +65,7 @@
 
 }
 
-.button a{
+.button button{
     background-color: #f72019;
     text-decoration: none;
     border: none;
@@ -129,7 +129,7 @@
     gap: 50px;
 }
 
-.botones a{
+.botones button{
     background-color: #9FE7F5;
     text-decoration: none;
     border: none;
@@ -157,7 +157,7 @@
     background-color: #429EBD;
 }
 
-.l-1 a{
+.l-1 button{
     background-color: #053F5C !important;
     text-decoration: none;
     border: none;
@@ -212,7 +212,7 @@ input[type="text"] {
     gap: 10px;
 }
 
-.escollir a{
+.escollir button{
     background-color: #67CCFF;
     text-decoration: none;
     border: none;
