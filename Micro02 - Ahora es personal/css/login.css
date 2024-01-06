@@ -64,12 +64,41 @@ form{
     
 }
 
-#loginl button{
+button{
+    align-self: flex-end;
     padding:10px;
-    width: 100px;
-    background-color: #ff9100;
-    font-size: 27px;
+    width: 180px;
+    background-color: #F27F0C;
+    font-size: 1.2em;
+    font-weight: 700;
     border: none;
-    border-radius: 5px;
 }
 
+.btn {
+    margin: 0.5em;
+    background: #f27f0c;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:after {
+    content: "";
+    background: #f7ad19;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   button:hover:after {
+    transform: skewX(0deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
