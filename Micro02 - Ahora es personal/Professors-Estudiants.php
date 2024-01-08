@@ -16,17 +16,24 @@
             <h1>PROFESSORS</h1>
         </div>
         <nav>
-        <button id="home" name="home">Home</button>
-            <?php
-            include "connexio.php";
-            $sql = "SELECT nom FROM professors where id_professor = 1";
-            $nom = mysqli_query($conn, $sql);
-            foreach ($nom as $string) {
-                $valor = implode($string);
-                echo "<h2>" . $valor . "</h2>";
-            }
-            ?>
+            <form method="post">
+                <button id="home" name="home">Home</button>
+                <?php
+                include "connexio.php";
+                $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = 1";
+                $nom = mysqli_query($conn, $sql);
+                foreach ($nom as $string) {
+                    $valor = implode($string);
+                    echo "<button id='user' name='professor'>" . $valor . "</button>";
+                }
+                ?>
+            </form>
         </nav>
+        <?php
+        if(isset($_POST['home'])) {
+            header("Location: indexP.php");
+        }
+        ?>
     </header>
     <div class="header">
         <h1>CHAMOUS</h1>
@@ -58,6 +65,24 @@
     </div>
         <div id="prueba">
             <h3>CREAR ESTUDIANTS</h3>
+            <form method="post" enctype="multipart/form-data">
+                <label for="nom">NOM</label>
+                <input type="text" name="nom">
+                <br>
+                <label for="cognoms">COGNOMS</label>
+                <input type="text" name="cognoms">
+                <br>
+                <label for="curs">CURS</label>
+                <input type="text" name="curs">
+                <br>
+                <label for="naixement">DATA NAIXEMENT</label>
+                <input type="date" name="naixement">
+                <br>
+                <label for="foto">FOTO DE PERFIL</label>
+                <input type="file" name="foto" accept="image/*">
+                <br><br>
+                <button id="crear" name="crear">CREAR</button>
+            </form>
         </div>
     <footer>
         <p>Derechos de imagen @Chamous</p>
