@@ -1,5 +1,4 @@
-//mostrar un div con id crear al darle a un boton
+let prueba = document.getElementById("prueba");
 function mostrarCrear() {
-    var div = document.getElementById("prueba");
-    div.style.display = "block";
+    prueba.style.display = "flex";
 }

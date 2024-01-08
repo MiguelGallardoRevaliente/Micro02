@@ -245,8 +245,7 @@ input[type="text"] {
     letter-spacing: 3px;
 }
 
-.prueba {
-    background-color: #f72019;
+#prueba {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -255,3 +254,8 @@ input[type="text"] {
     height: 300px;
     z-index: 1;
 }
+
+#prueba {
+    display: none;
+}
+
