@@ -18,14 +18,14 @@
         <nav>
             <form method="post">
                 <button id="home" name="home">Home</button>
-                <?php
+                <?php /*
                 include "connexio.php";
                 $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = 1";
                 $nom = mysqli_query($conn, $sql);
                 foreach ($nom as $string) {
                     $valor = implode($string);
                     echo "<button id='user' name='professor'>" . $valor . "</button>";
-                }
+                }*/
                 ?>
             </form>
         </nav>
@@ -66,22 +66,35 @@
         <div id="prueba">
             <h3>CREAR ESTUDIANTS</h3>
             <form method="post" enctype="multipart/form-data">
+                <div>
+                <div>
                 <label for="nom">NOM</label>
                 <input type="text" name="nom">
+                </div>
                 <br>
+                <div>
                 <label for="cognoms">COGNOMS</label>
                 <input type="text" name="cognoms">
+                </div>
                 <br>
+                <div>
                 <label for="curs">CURS</label>
                 <input type="text" name="curs">
+                </div>
                 <br>
+                <div>
                 <label for="naixement">DATA NAIXEMENT</label>
                 <input type="date" name="naixement">
-                <br>
+                </div>
+                <br><div>
                 <label for="foto">FOTO DE PERFIL</label>
                 <input type="file" name="foto" accept="image/*">
+                </div>
+                </div>
                 <br><br>
+                <div class="boton">
                 <button id="crear" name="crear">CREAR</button>
+                </div>
             </form>
         </div>
     <footer>

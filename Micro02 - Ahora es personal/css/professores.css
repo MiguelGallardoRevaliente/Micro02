@@ -246,16 +246,48 @@ input[type="text"] {
 }
 
 #prueba {
+    background-image: url(../img/fondo-azul-blanco.jpg);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 300px;
+    width: 800px;
+    height: 500px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
+    border-radius: 3px;
+    padding: 10px
 }
 
-#prueba {
-    display: none;
+#prueba h3{
+    font-size: 30px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+#prueba form{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 80%;
+}
+
+#prueba button{
+    background-color: #053F5C;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
