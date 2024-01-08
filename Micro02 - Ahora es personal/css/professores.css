@@ -328,7 +328,6 @@ input[type="text"] {
     z-index: 1;
     border-radius: 3px;
     padding: 10px;
-    display: none;
 }
 
 #modificar h3{

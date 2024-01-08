@@ -13,7 +13,7 @@
     <header class="initial">
         <div class="logo">
             <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
-            <h1>PROFESSORS</h1>
+            <h1>ALUMNES</h1>
         </div>
         <nav>
            <h2>(NombreProfe)</h2>

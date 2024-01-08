@@ -19,6 +19,15 @@ function validar(){
             header("Location: indexP.php");
         }
     }
+    $sql = "SELECT CONCAT(usuari, ',', contrasenya) FROM alumnes";
+    $login = mysqli_query($conn, $sql);
+    foreach ($login as $string) {
+        $valor = implode($string);
+        $valor = explode(",", $valor);
+        if ($valor[0] == $_POST['username'] && $valor[1] == $_POST['password']) {
+            header("Location: indexA.php");
+        }
+    }
 }
 ?>
 <div id="loginl">
