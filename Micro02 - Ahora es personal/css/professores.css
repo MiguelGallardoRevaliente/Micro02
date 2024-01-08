@@ -9,7 +9,6 @@
     background-position: top;
     margin-bottom: 0%;
     padding-bottom: 20%;
-    margin-top: 170px;
 }
 
 .header h1{
@@ -258,19 +257,19 @@ input[type="text"] {
     background-size: cover;
     z-index: 1;
     border-radius: 3px;
-    padding: 10px
+    padding: 10px;
+    display: none;
 }
 
 #prueba h3{
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 800;
     color: rgb(0, 0, 0);
-    letter-spacing: 1px;
     text-align: center;
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'josefin sans', sans-serif;
 }
 
 #prueba form{
@@ -291,3 +290,77 @@ input[type="text"] {
     bottom: 0;
     font-size: 25px;
 }
+
+.creacion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;    
+}
+
+.creacion div{
+    margin-top: 2%; 
+    display: flex;
+    gap: 30px;
+    justify-content: space-between  ;
+    
+}
+
+.creacion div label{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: 'josefin sans', sans-serif;
+
+}
+
+#modificar {
+    background-image: url(../img/fondo-azul-blanco.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+    display: none;
+}
+
+#modificar h3{
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-family: 'josefin sans',  sans-serif;
+}
+
+#modificar form{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 80%;
+    
+}
+
+#modificar button{
+    background-color: #053F5C;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
+
+/*info-professors*/
+
