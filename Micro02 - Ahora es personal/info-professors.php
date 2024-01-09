@@ -1,3 +1,22 @@
+<?php
+// Al principio del archivo, antes de cualquier salida HTML
+include "connexio.php";
+
+if (isset($_POST['home'])) {
+    header("Location: indexP.php");
+    exit(); // Termina el script después de la redirección
+}
+
+if (isset($_POST['professor'])) {
+    header("Location: info-professors.php");
+    exit(); // Termina el script después de la redirección
+}
+
+if (isset($_POST['logout'])) {
+    header("Location: login.php");
+    exit(); // Termina el script después de la redirección
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,17 +50,77 @@
                 ?>
             </form>
         </nav>
-        <?php
-        if (isset($_POST['home'])) {
-            header("Location: indexP.php");
-        }
-        ?>
     </header>
 
     <div class="info">
-        <div class="profe"></div>
+        <div class="crear">
+            <form method="post">
+                <button id="crear" name="crear">CREAR</button>
+            </form>
+            <?php
+            if (isset($_POST['crear'])) {
+                ?>
+            <form method="post" enctype="multipart/form-data">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required>
+                <br>
+                <label for="cognoms">Cognoms</label>
+                <input type="text" name="cognoms" id="cognoms" required>
+                <br>
+                <label for="usuari">Usuari</label>
+                <input type="text" name="usuari" id="usuari" required>
+                <br>
+                <label for="contrasenya">Contrasenya</label>
+                <input type="text" name="contrasenya" id="contrasenya" required>
+                <br>
+                <label for="foto">Foto de Perfil</label>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+                <br><br>
+                <button name="crearProfessor">CREAR</button>
+            </form>
+            <?php
+            }
+            if (isset($_POST['crearProfessor'])) {
+                $nom = $_POST['nom'];
+                $cognoms = $_POST['cognoms'];
+                $usuari = $_POST['usuari'];
+                $contrasenya = $_POST['contrasenya'];
+                $file = $_FILES['foto'];
+                $tipo = $file['type'];
+                $tmp_name = $file['tmp_name'];
+
+                // Leer el contenido del archivo
+                $dadesImatge = file_get_contents($tmp_name);
+                $dadesImatge = addslashes($dadesImatge);
+                $sql = "INSERT INTO professors (nom, cognoms, usuari, contrasenya, foto_perfil, tipus_foto) VALUES ('$nom', '$cognoms', '$usuari', '$contrasenya', '$dadesImatge', '$tipo')";
+                mysqli_query($conn, $sql);
+            }
+            ?>
+        </div>
+        <div class="profe">
+            <?php
+            include "connexio.php";
+            if(!isset($_POST['crear'])){
+                $sql_id = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
+                $id_res = mysqli_query($conn, $sql_id);
+                while($fila = mysqli_fetch_assoc($id_res)){
+                    $id = $fila['id_professor'];
+                    $sql = "SELECT * FROM professors WHERE id_professor = $id";
+                    $professor = mysqli_query($conn, $sql);
+                    while($fila = mysqli_fetch_assoc($professor)){
+                        echo "<img src='data:" . $fila["tipus_foto"] . ";base64," . base64_encode($fila["foto_perfil"]) . "' alt='''><br>";
+                        echo "NOM: " . $fila["nom"] . "<br>";
+                        echo "COGNOMS: " . $fila["cognoms"] . "<br>";
+                        echo "USUARI: " . $fila["usuari"] . "<br>";
+                    }
+                }
+            }
+            ?>
+        </div>
         <div class="info-boton">
-            <button>Cerrar session</button>
+            <form method="post">
+                <button name="logout">Cerrar session</button>
+            </form>
         </div>
     </div>
 
