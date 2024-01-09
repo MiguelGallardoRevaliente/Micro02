@@ -39,7 +39,7 @@
                     <input type="text">
                 </div>
                 <div>
-                    <label for="">Modul</label>
+                    <label style="gap: 40px;" for="">Modul</label>
                     <input type="text">
                 </div>
                 <form method="post">
@@ -47,30 +47,64 @@
                 </form>
             </div>
             <div class="l-2">
-                <div style="display: flex; align-items: top; gap: 10px;">
-                    <label for="">Descripcio</label>
-                    <input type="text">
-                </div>
+
                 <div class="escollir">
                     <div class="b-skills">
                         <p>Skills</p>
-                        <form method="post">
-                            <button id="escollir" name="escollir">Escollir</button>
-                        </form>
+
+                        <button onclick="mostrarskills()" id="escollir" name="escollir">Escollir</button>
+
                     </div>
                     <div class="b-alumnes">
                         <p>Alumnes</p>
-                        <form method="post">
-                            <button id="escollir" name="escollir">Escollir</button>
-                        </form>
+
+                        <button id="escollir" name="escollir">Escollir</button>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="skills">
+        <h3>ESCOLLIR SKILLS</h3>
+        <form method="post" enctype="multipart/form-data">
+            <div class="creacion">
+                <div>
+                    <label for="nom">NOM</label>
+                    <input type="text" name="nom">
+                </div>
+                <br>
+                <div>
+                    <label for="cognoms">COGNOMS</label>
+                    <input type="text" name="cognoms">
+                </div>
+                <br>
+                <div>
+                    <label for="curs">CURS</label>
+                    <input type="text" name="curs">
+                </div>
+                <br>
+                <div>
+                    <label for="naixement">DATA NAIXEMENT</label>
+                    <input type="date" name="naixement">
+                </div>
+                <br>
+                <div>
+                    <label for="foto">FOTO DE PERFIL</label>
+                    <input type="file" name="foto" accept="image/*">
+                </div>
+            </div>
+            <br><br>
+            <div class="boton">
+                <button id="crear" name="crear">CREAR</button>
+            </div>
+        </form>
+    </div>
     <footer>
         <p>Derechos de imagen @Chamous</p>
     </footer>
+    <script src="js/professores.js"></script>
+
 </body>
 
 </html>

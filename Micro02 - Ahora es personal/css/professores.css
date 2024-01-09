@@ -125,7 +125,7 @@
 
 .botones{
     display: flex;
-    gap: 50px;
+    gap: 0px;
 }
 
 .botones button{
@@ -155,6 +155,38 @@
     margin: 5% 5%;
     height: 550px;
     background-color: #429EBD;
+}
+
+.estudiant-info {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin: 0%;
+    margin-left: 10%;
+    height: 100%;
+    gap: 20px;
+    background-color: transparent;
+    justify-content: left;
+}
+
+.estudiant-info img {
+    width: auto;
+    height: 60%;
+    border-radius: 100%;
+}
+
+.estudiant-valores{
+    width:70%;
+}
+
+.estudiant-valores p{
+    font-size: 30px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 700;
+    color: black;
+    margin: 5px;
+    margin-left: 5%;
+    
 }
 
 .l-1 button{
@@ -230,6 +262,9 @@ input[type="text"] {
     letter-spacing: 3px;
 }
 
+.formulari{
+    margin-top: 50px;
+}
 .formulari label{
     font-size: 20px;
     font-weight: 100;
@@ -363,3 +398,87 @@ input[type="text"] {
 
 /*info-professors*/
 
+.info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 20%;
+    height: 800px;
+    background-color: #9FE7F5;
+    padding: 20px;
+}
+
+.info-boton button{
+    background-color: red;
+    padding: 10px 20px;
+    font-family: 'josefin sans', sans-serif;
+    color: white;
+    border: none;
+    box-shadow: 0px 4px 4px  gray;
+    cursor: pointer;
+    bottom: 0;
+    font-size: 25px;
+}
+
+
+#skills {
+    background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+    display: none;
+}
+
+#skills h3{
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-family: 'josefin sans',  sans-serif;
+}
+
+#skills form{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 80%;
+    
+}
+
+#skills button{
+    background-color: #053F5C;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
+
+#botons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: right;
+    gap: 12%;
+}
+
+select{
+    padding: 5px;
+    font-size: 20px;
+}
