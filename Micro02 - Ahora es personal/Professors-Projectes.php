@@ -22,11 +22,16 @@
             <button id="home" name="home">Home</button>
             <?php
             include "connexio.php";
-            $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = 1";
-            $nom = mysqli_query($conn, $sql);
-            foreach ($nom as $string) {
-                $valor = implode($string);
-                echo "<button id='user' name='professor'>" . $valor . "</button>";
+            $sql = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
+            $id_res = mysqli_query($conn, $sql);
+            while($fila = mysqli_fetch_array($id_res)){
+                $id = $fila['id_professor'];
+                $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = $id";
+                $nom = mysqli_query($conn, $sql);
+                foreach ($nom as $string) {
+                    $valor = implode($string);
+                    echo "<button id='user' name='professor'>" . $valor . "</button>";
+                }
             }
             ?>
         </form>
@@ -91,7 +96,7 @@
     <footer>
         <p>Derechos de imagen @Chamous</p>
     </footer>
-    <script src="js/professores.js"></script>
+<script src="js/professores.js"></script>
 
 </body>
 
