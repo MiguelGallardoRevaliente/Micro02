@@ -52,7 +52,7 @@
                     <div class="b-skills">
                         <p>Skills</p>
 
-                        <button onclick="mostrarskills()" id="escollir" name="escollir">Escollir</button>
+                        <button onclick="mostrarSkills()" id="escollir" name="escollir">Escollir</button>
 
                     </div>
                     <div class="b-alumnes">
@@ -70,33 +70,8 @@
         <form method="post" enctype="multipart/form-data">
             <div class="creacion">
                 <div>
-                    <label for="nom">NOM</label>
-                    <input type="text" name="nom">
+                    <button type="button">CREAR</button>
                 </div>
-                <br>
-                <div>
-                    <label for="cognoms">COGNOMS</label>
-                    <input type="text" name="cognoms">
-                </div>
-                <br>
-                <div>
-                    <label for="curs">CURS</label>
-                    <input type="text" name="curs">
-                </div>
-                <br>
-                <div>
-                    <label for="naixement">DATA NAIXEMENT</label>
-                    <input type="date" name="naixement">
-                </div>
-                <br>
-                <div>
-                    <label for="foto">FOTO DE PERFIL</label>
-                    <input type="file" name="foto" accept="image/*">
-                </div>
-            </div>
-            <br><br>
-            <div class="boton">
-                <button id="crear" name="crear">CREAR</button>
             </div>
         </form>
     </div>
