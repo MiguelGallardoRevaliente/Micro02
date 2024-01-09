@@ -25,10 +25,10 @@ function validar(){
 
     <form method="post">
         <label for="username">NOMBRE</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" id="username" name="username" value="" required><br><br>
 
         <label for="password">CONTRASEÑA</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="password" name="password" value="" required><br><br>
 
         <button class="btn" name="loginbtn">LOGIN</button>
     </form>
