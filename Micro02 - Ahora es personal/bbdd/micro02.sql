@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-01-2024 a las 10:38:27
+-- Tiempo de generación: 09-01-2024 a las 11:42:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -182,13 +182,6 @@ CREATE TABLE `usuari_actiu_professor` (
   `id_usuari_actiu_professor` int(11) NOT NULL,
   `id_professor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuari_actiu_professor`
---
-
-INSERT INTO `usuari_actiu_professor` (`id_usuari_actiu_professor`, `id_professor`) VALUES
-(0, 1);
 
 --
 -- Índices para tablas volcadas
