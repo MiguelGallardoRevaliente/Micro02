@@ -41,6 +41,11 @@
         header("Location: indexP.php");
     }
     ?>
+    <?php
+        if (isset($_POST['professor'])) {
+            header("Location: info-professors.php");
+        }
+        ?>
 </header>
     <div class="header">
         <h1>CHAMOUS</h1>

@@ -41,6 +41,11 @@
             header("Location: indexP.php");
         }
         ?>
+        <?php
+        if (isset($_POST['professor'])) {
+            header("Location: info-professors.php");
+        }
+        ?>
     </header>
     <div class="header">
         <h1>CHAMOUS</h1>
@@ -56,7 +61,7 @@
                 <?php
                 include "connexio.php";
 
-                $sql = "SELECT id_alumne, CONCAT(nom, ' ', cognoms) FROM alumnes";
+                $sql = "SELECT CONCAT(id_alumne, ',', nom, ' ', cognoms) FROM alumnes";
                 $id_res = mysqli_query($conn, $sql);
                 ?>
                 <form id="botons" method="post">
@@ -65,8 +70,9 @@
                         <?php
                         foreach ($id_res as $string) {
                             $valor = implode($string);
-                            $id = substr($valor, 0, 1);
-                            $nomCognoms = substr($valor, 1);
+                            $valor = explode(",", $valor);
+                            $id = $valor[0];
+                            $nomCognoms = $valor[1];
                             echo "<option value='$id'>$nomCognoms</option>";
                         }
                         ?>
