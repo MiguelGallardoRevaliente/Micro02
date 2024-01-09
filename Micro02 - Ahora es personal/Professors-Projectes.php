@@ -24,7 +24,7 @@
             include "connexio.php";
             $sql = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
             $id_res = mysqli_query($conn, $sql);
-            while($fila = mysqli_fetch_array($id_res)){
+            while($fila = mysqli_fetch_assoc($id_res)){
                 $id = $fila['id_professor'];
                 $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = $id";
                 $nom = mysqli_query($conn, $sql);
@@ -40,12 +40,10 @@
     if (isset($_POST['home'])) {
         header("Location: indexP.php");
     }
+    if (isset($_POST['professor'])) {
+        header("Location: info-professors.php");
+    }
     ?>
-    <?php
-        if (isset($_POST['professor'])) {
-            header("Location: info-professors.php");
-        }
-        ?>
 </header>
     <div class="header">
         <h1>CHAMOUS</h1>
@@ -98,15 +96,15 @@
         while ($fila = mysqli_fetch_assoc($id_res)) {
             $id = $fila['id_professor'];
             $sql_id_projectes = "SELECT id_projecte FROM professors_projectes WHERE id_professor = $id";
-            $id_res = mysqli_query($conn, $sql_id_projectes);
-            while ($fila = mysqli_fetch_assoc($id_res)) {
+            $id_res_2 = mysqli_query($conn, $sql_id_projectes);
+            while ($fila = mysqli_fetch_array($id_res_2)) {
                 $id_projecte = $fila['id_projecte'];
                 $sql = "SELECT nom, modul FROM projectes WHERE id_projecte = $id_projecte";
-                $id_res = mysqli_query($conn, $sql);
-                while ($fila = mysqli_fetch_assoc($id_res)) {
+                $id_res_3 = mysqli_query($conn, $sql);
+                while ($fila = mysqli_fetch_array($id_res_3)) {
                     echo "<div class='projecte'>";
-                    echo "<p>" . $fila['nom'] . "</p>";
-                    echo "<p>" . $fila['modul'] . "</p>";
+                    echo "<span>" . $fila['modul'] . "  -  </span>";
+                    echo "<span>" . $fila['nom'] . "</span>";
                     //Aqui va la flechita para el desplegable
                     echo "</div>";
                 }
@@ -135,12 +133,23 @@
                     }
                     ?>
                 <div>
-                    <button type="button" name="escollir">ESCOLLIR</button>
+                    <button name="escollir">ESCOLLIR</button>
                 </div>
             </div>
         </form>
     </div>
     <?php
+    $skills = array();
+    $percentatge = array();
+    if(isset($_POST['escollir'])){
+        $skills = $_POST['skills'];
+        $percentatge = $_POST['percentatge'];
+        $suma_percentatge = array_sum($percentatge);
+        if($suma_percentatge != 100) {
+            echo "<script>alert('La suma dels percentatges ha de ser 100')</script>";
+            echo "<script>escollirSkills.style.display = 'block'</script>";
+        }
+    }
     if(isset($_POST['crearSkills'])){
     ?>
         <div id="crearSkills">
@@ -184,6 +193,7 @@
         $sql = "INSERT INTO skills (icona, tipus_foto, nom, tipus) VALUES ('$dadesImatge', '$tipo_foto', '$nom', '$tipus')";
         mysqli_query($conn, $sql);
     }
+
     //Aqui es donde se crean los proyectos
     if(isset($_POST['crear'])){
         include "connexio.php";
@@ -197,9 +207,19 @@
         foreach ($id_projecte as $string) {
             $valor = implode($string);
             $id_projecte = $valor;
+            for($i = 0; $i < count($skills); $i++) {
+                $sql_id_skill = "SELECT id_skill FROM skills WHERE nom = '$skills[$i]'";
+                $id_skill = mysqli_query($conn, $sql_id_skill);
+                foreach ($id_skill as $string) {
+                    $valor = implode($string);
+                    $id_skill = $valor;
+                    $sql = "INSERT INTO skills_projectes (id_projecte, id_skill, percentatge) VALUES ($id_projecte, $id_skill, $percentatge[$i])";
+                    mysqli_query($conn, $sql);
+                }
+            }
             $sql_id= "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
-            $id_res = mysqli_query($conn, $sql_id);
-            while ($fila = mysqli_fetch_assoc($id_res)) {
+            $id_res_professor = mysqli_query($conn, $sql_id);
+            while ($fila = mysqli_fetch_assoc($id_res_professor)) {
                 $id = $fila['id_professor'];
                 $sql = "INSERT INTO professors_projectes (id_professor, id_projecte) VALUES ($id, $id_projecte)";
                 mysqli_query($conn, $sql);
