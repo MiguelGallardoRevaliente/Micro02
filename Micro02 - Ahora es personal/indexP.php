@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
     <header class="initial">
         <div class="logo">
             <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
@@ -18,18 +18,22 @@
         <nav>
             <form method="post">
                 <button id="home" name="home">Home</button>
+                <?php
+                include "connexio.php";
+                $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = 1";
+                $nom = mysqli_query($conn, $sql);
+                foreach ($nom as $string) {
+                    $valor = implode($string);
+                    echo "<button id='user' name='professor'>" . $valor . "</button>";
+                }
+                ?>
             </form>
-        
-        <?php
-            include "connexio.php";
-            $sql = "SELECT nom FROM professors where id_professor = 1";
-            $nom = mysqli_query($conn, $sql);
-            foreach ($nom as $string) {
-                $valor = implode($string);
-                echo "<h2>" . $valor . "</h2>";
-            }
-            ?>
         </nav>
+        <?php
+        if (isset($_POST['home'])) {
+            header("Location: indexP.php");
+        }
+        ?>
     </header>
     <div class="header">
         <h1>CHAMOUS</h1>

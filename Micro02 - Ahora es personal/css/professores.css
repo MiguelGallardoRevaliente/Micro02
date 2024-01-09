@@ -475,7 +475,7 @@ input[type="text"] {
     justify-content: space-between;
     align-items: center;
     float: right;
-    gap: 12%;
+    gap: 10%;
 }
 
 select{

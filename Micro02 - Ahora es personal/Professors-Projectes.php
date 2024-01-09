@@ -12,18 +12,31 @@
 
 <body>
 
-    <header class="initial">
-        <div class="logo">
-            <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
-            <h1>PROFESSORS</h1>
-        </div>
-        <nav>
-            <form method="post">
-                <button id="home" name="home">Home</button>
-            </form>
-            <h2>(NombreProfe)</h2>
-        </nav>
-    </header>
+<header class="initial">
+    <div class="logo">
+        <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
+        <h1>PROFESSORS</h1>
+    </div>
+    <nav>
+        <form method="post">
+            <button id="home" name="home">Home</button>
+            <?php
+            include "connexio.php";
+            $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = 1";
+            $nom = mysqli_query($conn, $sql);
+            foreach ($nom as $string) {
+                $valor = implode($string);
+                echo "<button id='user' name='professor'>" . $valor . "</button>";
+            }
+            ?>
+        </form>
+    </nav>
+    <?php
+    if (isset($_POST['home'])) {
+        header("Location: indexP.php");
+    }
+    ?>
+</header>
     <div class="header">
         <h1>CHAMOUS</h1>
         <h2>Pàgina de gestió i de creació d’aptituts i intruitats escolars.</h2>
