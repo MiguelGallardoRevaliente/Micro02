@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-01-2024 a las 17:27:26
+-- Tiempo de generación: 10-01-2024 a las 22:09:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -45,9 +45,10 @@ CREATE TABLE `alumnes` (
   `cognoms` varchar(100) NOT NULL,
   `usuari` varchar(50) NOT NULL,
   `contrasenya` varchar(50) NOT NULL,
-  `data_naixemente` date NOT NULL,
+  `data_naixement` date NOT NULL,
   `curs` varchar(50) NOT NULL,
-  `foto_perfil` longblob NOT NULL
+  `foto_perfil` longblob NOT NULL,
+  `tipus_foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -74,8 +75,16 @@ CREATE TABLE `professors` (
   `cognoms` varchar(100) NOT NULL,
   `usuari` varchar(50) NOT NULL,
   `contrasenya` varchar(50) NOT NULL,
-  `foto_perfil` longblob NOT NULL
+  `foto_perfil` longblob NOT NULL,
+  `tipus_foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `professors`
+--
+
+INSERT INTO `professors` (`id_professor`, `nom`, `cognoms`, `usuari`, `contrasenya`, `foto_perfil`, `tipus_foto`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin', '', '');
 
 -- --------------------------------------------------------
 
@@ -110,6 +119,7 @@ CREATE TABLE `projectes` (
 CREATE TABLE `skills` (
   `id_skill` int(11) NOT NULL,
   `icona` longblob NOT NULL,
+  `tipus_foto` varchar(50) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `tipus` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -138,6 +148,28 @@ CREATE TABLE `skills_projectes` (
   `percentatge` int(11) NOT NULL,
   `id_projecte` int(11) NOT NULL,
   `id_skill` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuari_actiu_alumne`
+--
+
+CREATE TABLE `usuari_actiu_alumne` (
+  `id_usuari_actiu_alumne` int(11) NOT NULL,
+  `id_alumne` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuari_actiu_professor`
+--
+
+CREATE TABLE `usuari_actiu_professor` (
+  `id_usuari_actiu_professor` int(11) NOT NULL,
+  `id_professor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -207,6 +239,20 @@ ALTER TABLE `skills_projectes`
   ADD KEY `skills_projectes_id_skill_fr` (`id_skill`);
 
 --
+-- Indices de la tabla `usuari_actiu_alumne`
+--
+ALTER TABLE `usuari_actiu_alumne`
+  ADD PRIMARY KEY (`id_usuari_actiu_alumne`),
+  ADD KEY `usuari_actiu_id_alumne_fr` (`id_alumne`);
+
+--
+-- Indices de la tabla `usuari_actiu_professor`
+--
+ALTER TABLE `usuari_actiu_professor`
+  ADD PRIMARY KEY (`id_usuari_actiu_professor`),
+  ADD KEY `usuari_actiu_id_professor_fr` (`id_professor`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -220,7 +266,7 @@ ALTER TABLE `activitats`
 -- AUTO_INCREMENT de la tabla `alumnes`
 --
 ALTER TABLE `alumnes`
-  MODIFY `id_alumne` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alumne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `alumnes_projectes`
@@ -232,25 +278,25 @@ ALTER TABLE `alumnes_projectes`
 -- AUTO_INCREMENT de la tabla `professors`
 --
 ALTER TABLE `professors`
-  MODIFY `id_professor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_professor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `professors_projectes`
 --
 ALTER TABLE `professors_projectes`
-  MODIFY `id_professor_projecte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_professor_projecte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `projectes`
 --
 ALTER TABLE `projectes`
-  MODIFY `id_projecte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_projecte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id_skill` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_skill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `skills_activitats`
@@ -262,7 +308,7 @@ ALTER TABLE `skills_activitats`
 -- AUTO_INCREMENT de la tabla `skills_projectes`
 --
 ALTER TABLE `skills_projectes`
-  MODIFY `id_skill_projecte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_skill_projecte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -295,6 +341,18 @@ ALTER TABLE `skills_activitats`
 ALTER TABLE `skills_projectes`
   ADD CONSTRAINT `skills_projectes_id_projecte_fr` FOREIGN KEY (`id_projecte`) REFERENCES `projectes` (`id_projecte`),
   ADD CONSTRAINT `skills_projectes_id_skill_fr` FOREIGN KEY (`id_skill`) REFERENCES `skills` (`id_skill`);
+
+--
+-- Filtros para la tabla `usuari_actiu_alumne`
+--
+ALTER TABLE `usuari_actiu_alumne`
+  ADD CONSTRAINT `usuari_actiu_id_alumne_fr` FOREIGN KEY (`id_alumne`) REFERENCES `alumnes` (`id_alumne`);
+
+--
+-- Filtros para la tabla `usuari_actiu_professor`
+--
+ALTER TABLE `usuari_actiu_professor`
+  ADD CONSTRAINT `usuari_actiu_id_professor_fr` FOREIGN KEY (`id_professor`) REFERENCES `professors` (`id_professor`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
