@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,6 +12,7 @@
 
 <body>
 
+<<<<<<< HEAD
     <header class="initial">
         <div class="logo">
             <img src="img/logo.png" alt="">
@@ -45,6 +46,41 @@
         }
         ?>
     </header>
+=======
+<header class="initial">
+    <div class="logo">
+        <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
+        <h1>PROFESSORS</h1>
+    </div>
+    <nav>
+        <form method="post">
+            <button id="home" name="home">Home</button>
+            <?php
+            include "connexio.php";
+            $sql = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
+            $id_res = mysqli_query($conn, $sql);
+            while($fila = mysqli_fetch_assoc($id_res)){
+                $id = $fila['id_professor'];
+                $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = $id";
+                $nom = mysqli_query($conn, $sql);
+                foreach ($nom as $string) {
+                    $valor = implode($string);
+                    echo "<button id='user' name='professor'>" . $valor . "</button>";
+                }
+            }
+            ?>
+        </form>
+    </nav>
+    <?php
+    if (isset($_POST['home'])) {
+        header("Location: indexP.php");
+    }
+    if (isset($_POST['professor'])) {
+        header("Location: info-professors.php");
+    }
+    ?>
+</header>
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
     <div class="header">
         <h1>CHAMOUS</h1>
         <h2>Pàgina de gestió i de creació d’aptituts i intruitats escolars.</h2>
@@ -103,7 +139,10 @@
                 $id_res_3 = mysqli_query($conn, $sql);
                 while ($fila = mysqli_fetch_array($id_res_3)) {
                     echo "<div class='projecte'>";
+<<<<<<< HEAD
                     echo "<button onclick='mostrarActivitats()'";
+=======
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
                     echo "<span>" . $fila['modul'] . "  -  </span>";
                     echo "<span>" . $fila['nom'] . "</span>";
                     //Aqui va la flechita para el desplegable
@@ -139,7 +178,10 @@
                     ?>
                 </div>
                 <div>
+<<<<<<< HEAD
                     <button name="crearSkills">CREAR</button>
+=======
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
                     <button name="escollir">ESCOLLIR</button>
                 </div>
             </div>
@@ -148,17 +190,30 @@
     <?php
     $skills = array();
     $percentatge = array();
+<<<<<<< HEAD
     if (isset($_POST['escollir'])) {
         $skills = $_POST['skills'];
         $percentatge = $_POST['percentatge'];
         $suma_percentatge = array_sum($percentatge);
         if ($suma_percentatge != 100) {
+=======
+    if(isset($_POST['escollir'])){
+        $skills = $_POST['skills'];
+        $percentatge = $_POST['percentatge'];
+        $suma_percentatge = array_sum($percentatge);
+        if($suma_percentatge != 100) {
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
             echo "<script>alert('La suma dels percentatges ha de ser 100')</script>";
             echo "<script>escollirSkills.style.display = 'block'</script>";
         }
     }
+<<<<<<< HEAD
     if (isset($_POST['crearSkills'])) {
         ?>
+=======
+    if(isset($_POST['crearSkills'])){
+    ?>
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
         <div id="crearSkills">
             <h3>CREAR SKILLS</h3>
             <form method="post" enctype="multipart/form-data">
@@ -214,7 +269,11 @@
         foreach ($id_projecte as $string) {
             $valor = implode($string);
             $id_projecte = $valor;
+<<<<<<< HEAD
             for ($i = 0; $i < count($skills); $i++) {
+=======
+            for($i = 0; $i < count($skills); $i++) {
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
                 $sql_id_skill = "SELECT id_skill FROM skills WHERE nom = '$skills[$i]'";
                 $id_skill = mysqli_query($conn, $sql_id_skill);
                 foreach ($id_skill as $string) {
@@ -224,7 +283,11 @@
                     mysqli_query($conn, $sql);
                 }
             }
+<<<<<<< HEAD
             $sql_id = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
+=======
+            $sql_id= "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
+>>>>>>> e5e2c4b80eb32f1bcccec1439d2da58e59756b72
             $id_res_professor = mysqli_query($conn, $sql_id);
             while ($fila = mysqli_fetch_assoc($id_res_professor)) {
                 $id = $fila['id_professor'];
