@@ -3,7 +3,7 @@ let escollirestudiants = document.getElementById("escollir-alumnes");
 let all = document.getElementsByClassName("Professors_Estudiants");
 let escollirSkills = document.getElementById("escollirSkills");
 let crearSkills = document.getElementById("crearSkills");
-let planaactivitats = document.getElementsByClassName("plana-activitats");
+let planaactivitats = document.querySelector(".planaactivitats");
 let body = document.body;
 function mostrarCrear() {
     prueba.style.display = "block";
@@ -23,10 +23,15 @@ function skillCreada() {
     escollirSkills.style.display = "block";
 }
 
-function mostrarActivitats (){
-    planaactivitats.style.display = "block";
 
+function mostrarActivitats() {
+    if (planaactivitats.style.display === "block") {
+        planaactivitats.style.display = "none";
+    } else {
+        planaactivitats.style.display = "block";
+    }
 }
+
 
 function mostrarEstudiants() {
     escollirestudiants.style.display = "block";
