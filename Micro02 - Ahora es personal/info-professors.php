@@ -33,7 +33,7 @@ if (isset($_POST['logout'])) {
 
     <header class="initial">
         <div class="logo">
-            <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
+            <img src="img/logo.png" alt="">
             <h1>PROFESSORS</h1>
         </div>
         <nav>
@@ -53,7 +53,31 @@ if (isset($_POST['logout'])) {
     </header>
 
     <div class="info">
-        <div class="crear">
+                
+        <div class="profe">
+            <?php
+            include "connexio.php";
+            if(!isset($_POST['crear'])){
+                $sql_id = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
+                $id_res = mysqli_query($conn, $sql_id);
+                while($fila = mysqli_fetch_assoc($id_res)){
+                    $id = $fila['id_professor'];
+                    $sql = "SELECT * FROM professors WHERE id_professor = $id";
+                    $professor = mysqli_query($conn, $sql);
+                    while($fila = mysqli_fetch_assoc($professor)){
+                        echo "<img src='data:" . $fila["tipus_foto"] . ";base64," . base64_encode($fila["foto_perfil"]) . "' alt='''>";
+                        echo "<p>NOM: " . $fila["nom"] . "</p>";
+                        echo "<p>COGNOMS: " . $fila["cognoms"] . "</p>";
+                        echo "<p>USUARI: " . $fila["usuari"] . "</p>";
+                    }
+                    
+                }
+            }
+            ?>
+        </div>
+        <div class="info-boton">
+            <form method="post">
+            <div class="crear">
             <form method="post">
                 <button id="crear" name="crear">CREAR</button>
             </form>
@@ -97,29 +121,8 @@ if (isset($_POST['logout'])) {
             }
             ?>
         </div>
-        <div class="profe">
-            <?php
-            include "connexio.php";
-            if(!isset($_POST['crear'])){
-                $sql_id = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
-                $id_res = mysqli_query($conn, $sql_id);
-                while($fila = mysqli_fetch_assoc($id_res)){
-                    $id = $fila['id_professor'];
-                    $sql = "SELECT * FROM professors WHERE id_professor = $id";
-                    $professor = mysqli_query($conn, $sql);
-                    while($fila = mysqli_fetch_assoc($professor)){
-                        echo "<img src='data:" . $fila["tipus_foto"] . ";base64," . base64_encode($fila["foto_perfil"]) . "' alt='''><br>";
-                        echo "NOM: " . $fila["nom"] . "<br>";
-                        echo "COGNOMS: " . $fila["cognoms"] . "<br>";
-                        echo "USUARI: " . $fila["usuari"] . "<br>";
-                    }
-                }
-            }
-            ?>
-        </div>
-        <div class="info-boton">
-            <form method="post">
                 <button name="logout">Cerrar session</button>
+
             </form>
         </div>
     </div>

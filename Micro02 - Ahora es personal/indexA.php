@@ -22,7 +22,7 @@
                 include "connexio.php";
                 $sql = "SELECT id_alumne FROM usuari_actiu_alumne WHERE id_usuari_actiu_alumne = 0";
                 $id_res = mysqli_query($conn, $sql);
-                while($fila = mysqli_fetch_array($id_res)){
+                while($fila = mysqli_fetch_assoc($id_res)){
                     $id = $fila['id_alumne'];
                     $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM alumnes where id_alumne = $id";
                     $nom = mysqli_query($conn, $sql);

@@ -183,7 +183,7 @@
     font-size: 30px;
     font-family: 'josefin sans', sans-serif;
     font-weight: 700;
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 5px;
     margin-left: 5%;
     
@@ -210,7 +210,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0% 15%;
+    margin: 0% 5%;
+}
+.l-1 form{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.l-1 form input{
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 20px;
+
+}
+
+.l-1 form div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
 }
 
 .l-2{
@@ -218,7 +241,7 @@
     justify-content: left;
     align-items: center;
     gap: 4%;
-    margin: 0% 15%;
+    margin: 2% 5%;
 }
 
 input[type="text"] {
@@ -326,18 +349,26 @@ input[type="text"] {
     font-size: 25px;
 }
 
+.pre-creacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
 .creacion{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 5%;    
+    margin-top: 5%; 
+    overflow-y: scroll;   
 }
 
 .creacion div{
     margin-top: 2%; 
     display: flex;
     gap: 30px;
-    justify-content: space-between  ;
+    justify-content: space-around  ;
     
 }
 
@@ -349,6 +380,52 @@ input[type="text"] {
 
 }
 
+.creacion div input{
+    font-size: 20px;
+    padding: 0px;
+    margin: 5px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+
+}
+
+.creando{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    font-size: 25px;
+
+}
+
+.creando .nom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.creando .tipus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.creando .icona{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.creando-button{
+    margin: auto;
+    margin-top: 12%;
+}
 #modificar {
     background-image: url(../img/fondo-azul-blanco.jpg);
     position: fixed;
@@ -419,11 +496,191 @@ input[type="text"] {
     cursor: pointer;
     bottom: 0;
     font-size: 25px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 
-#skills {
+#escollirSkills {
     background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+#crearSkills{
+    background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+#escollirSkills {
+    display: none;
+}
+
+#escollirSkills h3, #crearSkills h3{
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-family: 'josefin sans',  sans-serif;
+}
+
+#escollirSkills form, #crearSkills form{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 80%;
+    
+}
+
+#escollirSkills button, #crearSkills button{
+    background-color: #053F5C;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
+
+
+#botons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: right;
+    gap: 10%;
+}
+
+select{
+    padding: 5px;
+    font-size: 20px;
+}
+
+/*info-professors*/
+
+.profe p{
+    font-size: 30px;
+    font-family: 'josefin sans', sans-serif;
+}
+
+.crear form input{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.crear form label{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: 'josefin sans', sans-serif;
+}
+
+.skillsCreadas{
+    margin: 5%;
+}
+.skillsCreadas h2{
+    font-size: 65px;
+    font-weight: 100;
+}
+
+/*skills*/
+.skill-general{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin: 0px 12%;
+
+}
+
+.skill {
+    text-align: center;
+}
+.skill img{
+    max-width: 55%;
+    height:55%;
+}
+
+.skill label{
+    font-size: 20px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+/*mostrar projectes*/
+
+.projecte{
+    padding: 0px 10px;
+    width: 50%;
+    color: white;
+    margin: 1% 5%;
+    background-color: #053F5C;
+}
+
+.projecte button{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.projecte span{
+    font-size: 20px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-left: 15px;
+
+}
+
+/*mostrar activitats de projectes*/
+
+.plana-activitats{
+    display: none;
+    width: 100%;
+}
+
+/*escollir alumnes*/
+
+#escollir-alumnes {
+    background-image: url(../img/fondo-azul-blanco.jpg);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -439,7 +696,7 @@ input[type="text"] {
     display: none;
 }
 
-#skills h3{
+#escollir-alumnes h3{
     font-size: 30px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -447,20 +704,19 @@ input[type="text"] {
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
-    font-family: 'josefin sans',  sans-serif;
+    font-family: 'josefin sans', sans-serif;
 }
 
-#skills form{
+#escollir-alumnes form{
     display: flex;
     justify-content:space-between;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
     height: 80%;
-    
 }
 
-#skills button{
+#escollir-alumnes button{
     background-color: #053F5C;
     padding: 10px 40px;
     font-family: 'josefin sans', sans-serif;
@@ -469,16 +725,128 @@ input[type="text"] {
     bottom: 0;
     font-size: 25px;
 }
+@media screen and (max-width: 430px){
+    .header h1 {
+        font-size: 80px;
+    }
+    .header h2 {
+        font-size: 30px;
+    }
+    .header {
+        padding-bottom: 20%;
+    }
 
-#botons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    float: right;
-    gap: 10%;
-}
+    .intro h2 {
+        font-size: 60px;
+    }
+    .eleccion{
+        display: block;
+    }
+    #botons{
+        display: block;
+    }
+    .botones{
+        margin-top: 5%;
+    }
+    .botones button{
+        font-size: 13px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        margin-right: 2px;
+    }
+    .eleccion h1{
+        font-size: 20px;
+    }
+    select{
+        font-size: 13px;
+        padding: 5px;
+    }
+    .estudiant{
+        height: 400px;
+    }
+    .estudiant-info{
+        display: block;
+        margin: auto;
+        width: 100%;
+        padding-top: 5%;
+    }
+    .estudiant-info img{
+        width: 45%;
+        height: auto;
+        display: flex;
+        margin: auto;
+    }
+    .estudiant-valores{
+        width: 100%;
+        margin-top: 8%;
+    }
+    .estudiant-valores p{
+        font-size: 18px;
+        text-align: center;
+    }
+    br{
+        display: none;
+    }
 
-select{
-    padding: 5px;
-    font-size: 20px;
+    /* indexP */
+    
+    .estudiants{
+        margin-bottom: 10%;
+    }
+    .estudiants, .professors{
+        width: 100%;
+    }
+     .all{
+        display: block;
+    }
+    .text{
+        margin-bottom: 5%;
+    }
+    .text h1{
+        font-size: 35px;
+    }
+    .text p{
+        font-size: 15px;
+    }
+    .button button{
+        font-size: 35px;
+        width: 80%;
+    }
+
+    /*info-professors*/
+    .info{
+        height: 600px;
+        margin: 10%;
+    }
+    .profe{
+        margin-top: 20%;
+    }
+    .profe p{
+        font-size: 20px;
+    }
+
+    /*professors-projectes*/
+    .intro h2{
+        font-size: 55px;
+    }
+
+    .l-1{
+        display: block;
+    }
+    .l-1 button{
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+    .l-1 form{
+        display: block;
+    }
+    .l-1 form div{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .l-1 form input{
+        width: 70%;
+    }
+    /*skills*/
 }

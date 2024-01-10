@@ -12,7 +12,7 @@
 
     <header class="initial">
         <div class="logo">
-            <img style="border-radius: 50%; width: 100px;" src="img/logo.png" alt="">
+            <img src="img/logo.png" alt="">
             <h1>PROFESSORS</h1>
         </div>
         <nav>
@@ -22,7 +22,7 @@
                 include "connexio.php";
                 $sql = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
                 $id_res = mysqli_query($conn, $sql);
-                while($fila = mysqli_fetch_array($id_res)){
+                while($fila = mysqli_fetch_assoc($id_res)){
                     $id = $fila['id_professor'];
                     $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = $id";
                     $nom = mysqli_query($conn, $sql);
@@ -37,6 +37,9 @@
         <?php
         if (isset($_POST['home'])) {
             header("Location: indexP.php");
+        }
+        if (isset($_POST['professor'])) {
+            header("Location: info-professors.php");
         }
         ?>
     </header>
