@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Webpage</title>
-  <link rel="stylesheet" href="css/professores.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="css/professores.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header class="initial">
@@ -22,7 +25,7 @@
                 include "connexio.php";
                 $sql = "SELECT id_professor FROM usuari_actiu_professor WHERE id_usuari_actiu_professor = 0";
                 $id_res = mysqli_query($conn, $sql);
-                while($fila = mysqli_fetch_assoc($id_res)){
+                while ($fila = mysqli_fetch_assoc($id_res)) {
                     $id = $fila['id_professor'];
                     $sql = "SELECT CONCAT(nom, ' ', cognoms) FROM professors where id_professor = $id";
                     $nom = mysqli_query($conn, $sql);
@@ -86,4 +89,5 @@
         <p>Derechos de imagen @Chamous</p>
     </footer>
 </body>
+
 </html>

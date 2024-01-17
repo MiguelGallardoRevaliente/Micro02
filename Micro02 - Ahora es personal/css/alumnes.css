@@ -9,7 +9,7 @@
     background-position: top;
     margin-bottom: 0%;
     padding-bottom: 20%;
-    margin-top: 170px;
+    margin-top: 0px;
 }
 
 .header h1{
@@ -39,4 +39,280 @@
     font-family: 'Italiana', sans-serif;
     margin-left: 2%;
     font-weight: 200;
+}
+
+.projectes{
+    margin: 0px 8%;
+}
+
+.projectes form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20%;
+}
+
+.projectes button {
+    background-color: green;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: left;
+    grid-column: span 1; /* Ocupa 1 columna en la cuadrícula */
+}
+
+.projectes button:hover {
+    background-color: darkgreen;
+}
+
+.alumne{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 20%;
+    background-color: #9FE7F5;
+    padding: 40px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.alumne p{
+    margin: 10px;
+    padding: 0px;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.alumne img{
+    width: 40%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.alumne button{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/*projecte seleccionado*/
+
+.projecte-seleccionat{
+    margin: 5% 5%;
+    padding: 0px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(153, 153, 153, 0.75);
+}
+
+.projecte-seleccionat h1{
+    font-family: 'josefin sans', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0px;
+    padding: 0px;
+}
+
+.titol-projecte{
+    display: flex;
+    margin: 0px 50px 0px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titol-projecte h2{
+    background-color: orange;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+/*activitats-projecte elegit*/
+
+.titol-activitat{
+    display: flex;
+    margin: 0px 50px 0px 0px;
+    justify-content: left;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.titol-activitat button{
+    background-color: orange;
+    padding: 2px 20px;
+    border: none;
+    font-size: 20px;
+    font-family: 'joshefin sans', sans-serif;
+    border-radius: 5px;
+    color: white;
+}
+
+.titol-activitat button:hover{
+    background-color: darkorange;
+}
+
+.titol-activitat h2{
+    font-family: 'italiana', sans-serif;
+    font-size: 35px;
+    margin: 0px;
+    font-weight: 700;
+    padding: 0px;
+}
+
+.activitat{
+    margin-top: 20px;
+    padding-bottom: 60px;
+}
+.activitat p{
+    font-family: 'joshefin sans', sans-serif;
+    font-size: 20px;
+    margin: 10px 20px;
+    padding: 0px;
+    font-weight: 600;
+}
+
+.activitat input{
+    margin: 10px;
+    margin-left: 50px;
+    background-color: rgb(255, 232, 206);
+    padding: 40px 100px;
+    border-radius: 20px;    
+    border: 1px solid rgb(145, 145, 145);
+}
+
+.skills{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.skills img{
+    width: 50px;
+}
+.skills .skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills p{
+    font-size: 15px;
+}
+
+.canvifoto{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.canvifoto button{
+    font-size: 20px !important;
+    width: 50%;
+    margin: 0px;
+    margin: auto;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.canvifoto input[type="file"]{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+}
+
+@media screen and (max-width: 1030px){
+    
+
+    .body{
+        min-height: 900px;
+    }
+    .alumne{
+        margin: 5% 10%;
+    }
+
+    .alumne p{
+        font-size: 17px;
+    }
+
+    .alumne button{
+        padding: 5px 10px;
+        font-size: 15px;
+        display: flex;
+        margin: auto;
+        margin-top: 10px;
+        border-radius: 5px;
+        
+    }
+
+    .all h1{
+        font-size: 60px;
+        margin-bottom: 50px;
+        margin-left: 5%;
+    }
+
+    .projecte-seleccionat{
+        margin: 5% 3%;
+        padding: 0px 15px;
+    }
+
+    .projecte-seleccionat h1{
+        font-size: 22px !important;
+        margin: 0px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .titol-projecte{
+        margin: 0px;
+        align-items: center;
+    }
+
+    .titol-projecte h2{
+        font-size: 10px;
+        padding: 2px;
+    }
+
+    .titol-activitat h2{
+        font-size: 20px;
+    }
+
+    .titol-activitat button{
+        padding: 3px 5px;
+        font-size: 15px;
+    }
+
+    .titol-activitat {
+        margin: 0px 0px 0px 0px;
+        justify-content: space-between;
+        gap: 0px;
+        margin-bottom: 20px;
+    }
+
+    .activitat p{
+        margin: 0px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+    .canvifoto input[type="file"]{
+        width: 100%;
+        margin-left: 0px;
+    }
+
 }

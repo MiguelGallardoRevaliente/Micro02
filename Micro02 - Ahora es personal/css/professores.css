@@ -2,49 +2,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Freehand&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Freehand&family=Italiana&family=Josefin+Sans:wght@100;400&family=Lexend+Deca&family=Warnes&display=swap');
 
-.header{
+body{
+    background-color: #f5fcff;
+}
+
+.header {
     background-image: url(../img/headerbackground.png);
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: top;
     margin-bottom: 0%;
     padding-bottom: 20%;
 }
 
-.header h1{
+.header h1 {
     text-align: center;
     font-family: 'Italiana', sans-serif;
-    font-size: 170px;
+    font-size: 150px;
     margin: 0px;
     padding-top: 10%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
-.header h2{
+.header h2 {
     text-align: center;
     font-family: 'Italiana', sans-serif;
-    font-size: 70px; 
+    font-size: 50px;
     margin: 0px 12%;
     padding-bottom: 0%;
 }
 
-.all{
+.all {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 15% 10%;
 }
 
-.texto p,h1,h2,h3,h4,h5,h6{
+.texto p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Italiana', sans-serif;
-
 }
 
-.text{
+.text {
     margin-bottom: 10%;
 }
 
-.text h1{
+.text h1 {
     font-size: 50px;
     font-weight: 200;
     margin: 0px;
@@ -52,48 +61,102 @@
     margin-bottom: 3%;
 }
 
-.text p{
+.text p {
     font-size: 20px;
     font-weight: 200;
     margin: 0px 0%;
     padding-bottom: 0%;
 }
 
-.button{
+.button {
     bottom: 0px;
 
 }
 
 .button button{
-    background-color: #f72019;
+    background-color: #f5fcff;
+    border: 1px solid red;
     text-decoration: none;
-    border: none;
     border-radius: 10px;
     padding: 10px 50px;
     font-family: 'Italiana', sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 200;
-    color: white;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     transition: 0.5s;
     font-weight: bold;
     bottom: 0px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
 }
 
-.estudiants, .professors{
+.button button:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .professors .button button::after {
+    content: "";
+    background: #ff0000; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .professors .button button:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+  .estudiants .button button::after {
+    content: "";
+  background: red; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  }
+  .estudiants .button button:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+.estudiants,
+.professors {
     width: 500px;
 }
 
-.Professors_Estudiants{
-    margin-top: 10%;
+.Professors_Estudiants {
+    margin-top: 5%;
 }
 
-.Professors_Projectes{
-    margin-top: 10%;
+.Professors_Projectes {
+    margin-top: 5%;
     margin-bottom: 10%;
 }
 
-.intro h2{
+.intro h2 {
     font-size: 75px;
     font-weight: 200;
     margin: 0px;
@@ -102,14 +165,14 @@
     margin-bottom: 0%;
 }
 
-.estudiantes{
+.estudiantes {
     display: flex;
     justify-content: space-between;
     margin: 5% 5%;
     align-items: center;
 }
 
-.eleccion{
+.eleccion {
     display: flex;
     justify-content: center;
     margin: 0% 0%;
@@ -117,43 +180,44 @@
     align-items: center;
 }
 
-.scroll{
+.scroll {
     padding: 10px 120px;
     margin: 10% 0%;
     border: 1px solid #868180;
 }
 
-.botones{
+.botones {
     display: flex;
     gap: 0px;
 }
 
-.botones button{
+.botones button {
     background-color: #9FE7F5;
     text-decoration: none;
     border: none;
     border-radius: 10px;
-    padding: 10px 40px;
+    padding: 10px 20px;
     font-family: 'josefin sans', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 100;
     color: rgb(0, 0, 0);
     cursor: pointer;
     transition: 0.5s;
     font-weight: bold;
     bottom: 0px;
-    box-shadow: 0px 4px 4px  gray;
+    box-shadow: 0px 4px 4px gray;
     margin: 0px 10px;
 }
 
-.importar{
+.importar {
     background-color: #053F5C !important;
-   color: white !important;
+    color: white !important;
 }
 
-.estudiant{
+.estudiant {
     margin: 5% 5%;
     height: 550px;
+    border-radius: 30px;
     background-color: #429EBD;
 }
 
@@ -175,21 +239,21 @@
     border-radius: 100%;
 }
 
-.estudiant-valores{
-    width:70%;
+.estudiant-valores {
+    width: 70%;
 }
 
-.estudiant-valores p{
+.estudiant-valores p {
     font-size: 30px;
     font-family: 'josefin sans', sans-serif;
     font-weight: 700;
     color: rgb(255, 255, 255);
     margin: 5px;
     margin-left: 5%;
-    
+
 }
 
-.l-1 button{
+.l-1 button {
     background-color: #053F5C !important;
     text-decoration: none;
     border: none;
@@ -203,23 +267,30 @@
     transition: 0.5s;
     font-weight: bold;
     bottom: 0px;
-    box-shadow: 0px 4px 4px  gray;
+    box-shadow: 0px 4px 4px gray;
 }
 
-.l-1{
+.l-1 button:hover {
+    background-color: #187291 !important;
+}
+
+.l-1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0% 5%;
 }
-.l-1 form{
+
+.l-1 form {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
-.l-1 form input{
+
+.l-1 form input {
     width: 200px;
     height: 20px;
     border-radius: 5px;
@@ -229,19 +300,19 @@
 
 }
 
-.l-1 form div{
+.l-1 form div {
     display: flex;
     gap: 20px;
     align-items: center;
 
 }
 
-.l-2{
+.l-2 {
     display: flex;
     justify-content: left;
     align-items: center;
     gap: 4%;
-    margin: 2% 5%;
+    margin: 2% 14%;
 }
 
 input[type="text"] {
@@ -250,24 +321,24 @@ input[type="text"] {
 
 .l-2 input[type="text"] {
     width: 300px;
-    height:150px;
+    height: 150px;
 }
 
-.b-skills{
+.b-skills {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
 
-.b-alumnes{
+.b-alumnes {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
 
-.escollir button{
+.escollir button {
     background-color: #67CCFF;
     text-decoration: none;
     border: none;
@@ -281,21 +352,23 @@ input[type="text"] {
     transition: 0.5s;
     font-weight: bold;
     bottom: 0px;
-    box-shadow: 0px 4px 4px  gray;
+    box-shadow: 0px 4px 4px gray;
     letter-spacing: 3px;
+    border-radius: 7px;
 }
 
-.formulari{
+.formulari {
     margin-top: 50px;
 }
-.formulari label{
+
+.formulari label {
     font-size: 20px;
     font-weight: 100;
     color: rgb(0, 0, 0);
     letter-spacing: 3px;
 }
 
-.formulari p{
+.formulari p {
     font-size: 20px;
     font-weight: 100;
     color: rgb(0, 0, 0);
@@ -319,7 +392,7 @@ input[type="text"] {
     display: none;
 }
 
-#prueba h3{
+#prueba h3 {
     font-size: 30px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -330,16 +403,16 @@ input[type="text"] {
     font-family: 'josefin sans', sans-serif;
 }
 
-#prueba form{
+#prueba form {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
     height: 80%;
 }
 
-#prueba button{
+#prueba button {
     background-color: #053F5C;
     padding: 10px 40px;
     font-family: 'josefin sans', sans-serif;
@@ -349,30 +422,31 @@ input[type="text"] {
     font-size: 25px;
 }
 
-.pre-creacion{
+.pre-creacion {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    margin-left: 28%;
 }
 
-.creacion{
+.estudiants-creacion {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 5%; 
-    overflow-y: scroll;   
+    margin-top: 5%;
 }
 
-.creacion div{
-    margin-top: 2%; 
+.estudiants-creacion div {
+    margin-top: 0%;
     display: flex;
     gap: 30px;
-    justify-content: space-around  ;
-    
+    justify-content: space-between;
+    align-items: center;
+
 }
 
-.creacion div label{
+.estudiants-creacion div label {
     font-size: 20px;
     font-weight: bold;
     color: rgb(0, 0, 0);
@@ -380,17 +454,17 @@ input[type="text"] {
 
 }
 
-.creacion div input{
-    font-size: 20px;
-    padding: 0px;
+.estudiants-creacion div input {
+    font-size: 15px;
+    padding: 5px;
     margin: 5px;
-    width: 50px;
+    width: 220px;
     border-radius: 5px;
     border: 1px solid black;
 
 }
 
-.creando{
+.creando {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -399,7 +473,7 @@ input[type="text"] {
 
 }
 
-.creando .nom{
+.creando .nom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -407,7 +481,7 @@ input[type="text"] {
 
 }
 
-.creando .tipus{
+.creando .tipus {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -415,17 +489,19 @@ input[type="text"] {
 
 }
 
-.creando .icona{
+.creando .icona {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 
 }
-.creando-button{
+
+.creando-button {
     margin: auto;
     margin-top: 12%;
 }
+
 #modificar {
     background-image: url(../img/fondo-azul-blanco.jpg);
     position: fixed;
@@ -442,7 +518,7 @@ input[type="text"] {
     padding: 10px;
 }
 
-#modificar h3{
+#modificar h3 {
     font-size: 30px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -450,20 +526,20 @@ input[type="text"] {
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
-    font-family: 'josefin sans',  sans-serif;
+    font-family: 'josefin sans', sans-serif;
 }
 
-#modificar form{
+#modificar form {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
     height: 80%;
-    
+
 }
 
-#modificar button{
+#modificar button {
     background-color: #053F5C;
     padding: 10px 40px;
     font-family: 'josefin sans', sans-serif;
@@ -475,49 +551,59 @@ input[type="text"] {
 
 /*info-professors*/
 
-.info{
+.info {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
     margin: 5% 20%;
-    height: 800px;
-    background-color: #9FE7F5;
-    padding: 20px;
+    background-color: #a0e3e9;
+    padding: 40px 20px;
+    border: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgb(66, 66, 66);
+    text-align: center;
 }
 
-.info-boton button{
-    background-color: red;
+.info h1{
+    font-size: 50px;
+    font-weight: 200;
+    margin: 0px;
+    padding-top: 5%;
+    margin-bottom: 3%;
+}
+
+.info-boton button {
+    background-color: rgb(207, 32, 32);
     padding: 10px 20px;
     font-family: 'josefin sans', sans-serif;
     color: white;
     border: none;
-    box-shadow: 0px 4px 4px  gray;
+    box-shadow: 0px 4px 4px gray;
     cursor: pointer;
     bottom: 0;
     font-size: 25px;
     margin-top: 10px;
     width: 100%;
+    border-radius: 10px;
+}
+
+.crear form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.crear form div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-weight: 200;
 }
 
 
 #escollirSkills {
-    background-image: url(../img/blanco-naranjajpg.jpg);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 500px;
-    box-shadow: 0px 4px 10px rgb(99, 99, 99);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    border-radius: 3px;
-    padding: 10px;
-}
-
-#crearSkills{
     background-image: url(../img/blanco-naranjajpg.jpg);
     position: fixed;
     top: 50%;
@@ -533,11 +619,46 @@ input[type="text"] {
     padding: 10px;
 }
 
+.creacion {
+    overflow-y: auto;
+    max-height: 60%;
+}
+
+
+#crearSkills {
+    background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.crear-escollir-skills {
+    margin-top: 30px !important;
+    font-size: 40px !important;
+    padding: 0px 10px !important;
+    background-color: orange !important;
+    color: white !important;
+    margin-right: 60px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    float: right !important;
+}
+
 #escollirSkills {
     display: none;
 }
 
-#escollirSkills h3, #crearSkills h3{
+#escollirSkills h3,
+#crearSkills h3 {
     font-size: 30px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -545,21 +666,23 @@ input[type="text"] {
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
-    font-family: 'josefin sans',  sans-serif;
+    font-family: 'josefin sans', sans-serif;
 }
 
-#escollirSkills form, #crearSkills form{
+#escollirSkills form,
+#crearSkills form {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
     height: 80%;
-    
+
 }
 
-#escollirSkills button, #crearSkills button{
-    background-color: #053F5C;
+#escollirSkills button,
+#crearSkills button {
+    background-color: darkorange;
     padding: 10px 40px;
     font-family: 'josefin sans', sans-serif;
     border: 3px solid white;
@@ -569,7 +692,7 @@ input[type="text"] {
 }
 
 
-#botons{
+#botons {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -577,19 +700,19 @@ input[type="text"] {
     gap: 10%;
 }
 
-select{
+select {
     padding: 5px;
     font-size: 20px;
 }
 
 /*info-professors*/
 
-.profe p{
+.profe p {
     font-size: 30px;
     font-family: 'josefin sans', sans-serif;
 }
 
-.crear form input{
+.crear form input {
     font-size: 20px;
     padding: 5px;
     margin: 5px;
@@ -597,40 +720,66 @@ select{
     border-radius: 5px;
     border: 1px solid black;
 }
-.crear form label{
+
+.crear form label {
     font-size: 20px;
     font-weight: bold;
     color: rgb(0, 0, 0);
     font-family: 'josefin sans', sans-serif;
 }
 
-.skillsCreadas{
+.skillsCreadas {
     margin: 5%;
 }
-.skillsCreadas h2{
+
+.skillsCreadas h2 {
     font-size: 65px;
     font-weight: 100;
 }
 
 /*skills*/
-.skill-general{
+
+.skill-general {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     justify-content: center;
-    margin: 0px 12%;
+    margin: 0px 10%;
+    background-color: white;
+    box-shadow: 1px 1px 5px gray inset;
+    border-radius: 10px;
+    padding: 20px;
 
+}
+
+.skills-creacion {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+
+.skills {
+    text-align: center;
 }
 
 .skill {
     text-align: center;
-}
-.skill img{
-    max-width: 55%;
-    height:55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.skill label{
+.skills img {
+    max-width: 55%;
+    height: 55%;
+}
+
+.skills label {
     font-size: 20px;
     font-family: 'josefin sans', sans-serif;
     font-weight: 400;
@@ -639,28 +788,421 @@ select{
     margin-top: 10px;
 }
 
+.skills .skill-icons button {
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: orange;
+    cursor: pointer;
+}
+
 /*mostrar projectes*/
 
-.projecte{
+.projecte {
     padding: 0px 10px;
     width: 50%;
     color: white;
     margin: 1% 5%;
     background-color: #053F5C;
+    box-shadow: 3px 3px 4px gray;
+    border-radius: 10px;
 }
 
-.projecte button{
-    width: 100%;
+.projecte form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.projecte button {
     height: 100%;
     text-align: left;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 15px 0px;
+    padding: 10px 0px;
+    font-size: 30px;
+    color: white;
 }
 
-.projecte span{
+.projecte span {
     font-size: 20px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    margin-left: 15px;
+    padding: 10px 0px;
+    
+
+}
+
+.projecte form button {
+    font-size: 30px;
+    color: white;
+}
+
+/*mostrar info projectes*/
+
+.info-projecte {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 6px gray;
+}
+
+.info-projecte button {
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    bottom: 0px;
+    box-shadow: 0px 4px 4px gray;
+    letter-spacing: 3px;
+    margin-left: 10px;
+
+}
+
+/*mostrar skills (projecte)*/
+
+.skills-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 10px #8f8f8f;
+    border-radius: 10px;
+    padding: 30px 60px;
+}
+
+.skills-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.skills-imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.skills-container p {
+    font-size: 30px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    margin: 0px;
+    margin-top: 10px;
+
+    margin-left: 5px;
+}
+
+/*mostrar alumnes (projecte)*/
+
+.alumnes-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 10px #8f8f8f;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: 10px 20px;
+    max-height: 400px;
+    padding-top: 40px;
+}
+
+.alumnes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0%;
+    width: auto;
+    gap: 20px;
+    padding: 2px 10px;
+    border: 1px solid #c9c9c9;
+    box-shadow: 1px 1px 4px gray;
+    background-color: white;
+    font-size: 20px;
+}
+
+.alumnes img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.alumnes p{
+    margin: 0px;
+}
+
+/*modificar projectes*/
+
+.modificar-projecte{
+    position: fixed;
+    width: 700px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 10px #8f8f8f;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: 10px 20px;
+    background-image: url(../img/fondo-azul-blanco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.modificar-projecte form{
+    display: flex;
+    justify-content: space-between;
+    align-items: revert;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.modificar-projecte h3{
+    font-size: 30px;
+    margin: 0px;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.modificar-projecte form div{
+    margin: 5px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modificar-projecte form div label{
+    font-size: 20px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.modificar-projecte form div input{
+    font-size: 15px;
+    padding: 2px;
+    margin: 0px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.modificar-projecte button{
+    background-color: #053F5C;
+    font-family: 'josefin sans', sans-serif;
+    padding: 10px 0px;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 25px;
+    width: 40%;
+}
+
+.alumnes-modificar-projecte{
+    margin: 5px 0%;
+    border-radius: 7px;
+    width: auto;
+    display: block !important;
+    gap: 20px;
+    padding: 2px 10px;
+    font-size: 20px;
+    overflow-y: auto;
+    max-height: 100px;
+    padding: 2px 10px;
+    border: 1px solid #c9c9c9;
+    box-shadow: 1px 1px 4px gray;
+    background-color: white;
+}
+
+.alumnes-modificar-projecte label{
+
+    margin-left: 0px !important;
+
+}
+
+.alumnes-modificar-individual input{
+    width: 20px !important;
+}
+
+.alumnes-modificar-individual{
+    display: flex !important;
+    align-items: center;
+    justify-content: left !important;
+    margin: 5px 0%;
+    width: auto;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.skills-projecte-all{
+    margin: 5px 0%;
+    width: auto;
+    display: block !important;
+    gap: 20px;
+    padding: 2px 10px;
+    font-size: 20px;
+    border-radius: 7px;
+    overflow-y: auto;
+    max-height: 100px;
+    padding: 2px 10px;
+    border: 1px solid #c9c9c9;
+    box-shadow: 1px 1px 4px gray;
+    background-color: white;    
+}
+
+.skills-projecte-all h1{
+    font-size: 20px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.skills-projecte{
+    margin: 0px !important;
+}
+
+.skills-porcentaje label{
+    margin-left: 5px !important;
+}
+
+.skills-porcentaje input{
+    width: 50px !important;
+}
+
+/*mostrar activitats de projectes*/
+
+.planaactivitats {
+    margin: 0px 5%;
+    background-color: #429EBD;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@keyframes wipe-in-down {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  [transition-style="in:wipe:down"] {
+    animation: 1s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
+  }
+
+.activitats-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+
+}
+
+.activitats-top form {
+    width: 50px;
+}
+
+.activitats-top h3 {
+    font-family: 'italiana', sans-serif;
+    font-size: 50px;
+    color: white;
+    font-weight: 400;
+
+}
+
+.activitats-top button {
+    background: transparent;
+    border: 1px solid white;
+    width: 100%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.activitats-top button:hover{
+    box-shadow: 0px 4px 5px black;
+}
+
+.activitats-top button:active {
+    background-color: white;
+    color: #053F5C;
+    transition: 0.2s;
+}
+
+.activitats-all {
+    padding: 0px 10px;
+}
+
+.activitats {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 1% 0%;
+    padding: 0px;
+    gap: 2%;
+}
+
+.activitats form {
+    display: flex;
+
+}
+
+
+.activitats-nom {
+    display: flex;
+    align-items: center;
+}
+
+.activitats-nom i {
+    font-size: 40px;
+    color: white;
+    margin-right: 10px;
+
+}
+
+.activitats-nom button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 30px;
+    padding: 0px;
+}
+
+.activitats-nom span {
+    font-size: 25px;
     font-family: 'josefin sans', sans-serif;
     font-weight: 400;
     color: rgb(255, 255, 255);
@@ -670,12 +1212,53 @@ select{
 
 }
 
-/*mostrar activitats de projectes*/
+.activitats-icons {
+    font-size: 40px;
+    color: white;
+    font-weight: 100;
+    margin-left: 10px;
+}
 
-.planaactivitats{
-    display: none;
-    width: 100%;
-    margin: 0px 5%;
+.activitats-icons button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    padding: 0px;
+
+}
+
+/*mostrar-info-activitats*/
+.activitat-caracterisitiques {
+    background-color: transparent;
+    margin-left: 0px;
+}
+
+.activitat-caracterisitiques .activitats-skills {
+    display: flex;
+    gap: 25px;
+}
+
+.skill-imagen{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.skill-imagen img {
+    max-width: 50px;
+    height: auto;
+}
+
+.skill-imagen p {
+    font-size: 20px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    text-align: center;
+    margin-top: 5px;
+
 }
 
 /*escollir alumnes*/
@@ -697,7 +1280,255 @@ select{
     display: none;
 }
 
-#escollir-alumnes h3{
+#escollir-alumnes h3 {
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.escollir-alumnes-seleccio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7%;
+    height: 250px;
+    overflow-y: auto;
+}
+
+.seleccio-alumnat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 5px 0%;
+    gap: 20px;
+    padding: 0px 10px;
+    border: 1px solid #c9c9c9;
+    box-shadow: 1px 1px 4px gray;
+    background-color: white;
+}
+
+.seleccio-alumnat label {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: 'josefin sans', sans-serif;
+}
+
+.seleccio-alumnat input {
+    width: 40px;
+    height: 40px;
+}
+
+.seleccio-alumnat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#escollir-alumnes .boton {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#escollir-alumnes .boton button {
+    background-color: #053F5C;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
+
+/*borrar skills*/
+
+.borrar-skills {
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 15px 15px;
+    border-radius: 10px;
+}
+
+.borrar-skills h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    font-family: 'josefin sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.borrar-skills-all {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.borrar-skills-all button {
+    background-color: #e7e7e7;
+    padding: 5px 20px;
+    font-family: 'josefin sans', sans-serif;
+    color: rgb(0, 0, 0);
+    border: none;
+    bottom: 0;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.borrar-skills-all .borrar {
+    background-color: #f72019 !important;
+    color: white !important;
+}
+
+/*borrar projecte*/
+
+.borrar-projectes {
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 15px 15px;
+    border-radius: 10px;
+}
+
+.borrar-projectes h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    font-family: 'josefin sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.borrar-projectes-all {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.borrar-projectes-all button {
+    background-color: #e7e7e7;
+    padding: 5px 20px;
+    font-family: 'josefin sans', sans-serif;
+    color: rgb(0, 0, 0);
+    border: none;
+    bottom: 0;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.borrar-projectes-all .borrar {
+    background-color: #f72019 !important;
+    color: white !important;
+}
+
+/*borrar activitats*/
+
+
+.borrar-activitats {
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 15px 15px;
+    border-radius: 10px;
+}
+
+.borrar-activitats h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    font-family: 'josefin sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.borrar-activitats-all {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.borrar-activitats-all button {
+    background-color: #e7e7e7;
+    padding: 5px 20px;
+    font-family: 'josefin sans', sans-serif;
+    color: rgb(0, 0, 0);
+    border: none;
+    bottom: 0;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.borrar-activitats-all .borrar {
+    background-color: #f72019 !important;
+    color: white !important;
+}
+
+/*modificar-skills*/
+
+.modificar-skills {
+
+    background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.modificar-skills h3 {
     font-size: 30px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -708,17 +1539,17 @@ select{
     font-family: 'josefin sans', sans-serif;
 }
 
-#escollir-alumnes form{
+.modificar-skills form {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
     height: 80%;
 }
 
-#escollir-alumnes button{
-    background-color: #053F5C;
+.modificar-skills button {
+    background-color: orange;
     padding: 10px 40px;
     font-family: 'josefin sans', sans-serif;
     border: 3px solid white;
@@ -726,13 +1557,260 @@ select{
     bottom: 0;
     font-size: 25px;
 }
-@media screen and (max-width: 430px){
+
+/*crear activitats*/
+
+.crearActivitats {
+    background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.crearActivitats h3 {
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-family: 'josefin sans', sans-serif;
+}
+
+.crear-activitats-all {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.crear-activitats-all div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.crear-activitats-all div label {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: 'josefin sans', sans-serif;
+}
+
+.crear-activitats-all .nom input {
+    font-size: 20px;
+    padding: 0px;
+    margin: 5px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.crear-activitats-all .dataentrega input {
+    font-size: 16px;
+    padding: 3px;
+    margin: 5px;
+    width: 120px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.crear-activitats-all .select-skills {
+    justify-content: space-between;
+    align-items: flex-start !important;
+
+
+}
+
+.crear-activitats-all .all-skills {
+    box-shadow: 1px 1px 4px gray;
+}
+
+.crear-activitats-all .select-skills div {
+    width: 300px;
+    max-height: 120px;
+    background-color: #ffdc8a;
+    overflow-y: auto;
+    display: block;
+}
+
+
+.crear-activitats-all .select-skills div label {
+    font-size: 15px;
+    text-align: left;
+}
+
+.crear-activitats-all-button {
+    margin: auto;
+    margin-top: 2%;
+    margin-left: 30%;
+}
+
+.crear-activitats-all-button button {
+    background-color: #dba100;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
+
+/*modificar activitats*/
+
+.modificar-activitats {
+    background-image: url(../img/blanco-naranjajpg.jpg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    box-shadow: 0px 4px 10px rgb(99, 99, 99);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.modificar-activitats h3 {
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-family: 'josefin sans', sans-serif;
+}
+
+.modificar-activitats-all {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.modificar-activitats-all div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.modificar-activitats-all div label {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: 'josefin sans', sans-serif;
+}
+
+.modificar-activitats-all .nom input {
+    font-size: 20px;
+    padding: 0px;
+    margin: 5px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.modificar-activitats-all .dataentrega input {
+    font-size: 16px;
+    padding: 3px;
+    margin: 5px;
+    width: 120px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.modificar-activitats-all .select-skills {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start !important;
+    margin-bottom: 15px;
+
+}
+
+.modificar-activitats-all .select-skills div {
+    width: 300px;
+    height: 150px;
+    background-color: #dfdfdf;
+}
+
+.modificar-activitats-all-button {
+    margin: auto;
+    margin-top: 2%;
+}
+
+.modificar-activitats-all-button button {
+    background-color: #dba100;
+    padding: 10px 40px;
+    font-family: 'josefin sans', sans-serif;
+    border: 3px solid white;
+    color: white;
+    bottom: 0;
+    font-size: 25px;
+}
+
+/*validacio*/
+
+.validacio-activitat h3{
+    font-size: 25px;
+    font-family: 'josefin sans', sans-serif;
+
+}
+
+.validacio-activitat label{
+    margin: 0px 10px;
+    font-size: 25px;
+}
+.validacio-activitat input{
+    font-size: 15px;
+}
+
+.validacio-activitat button{
+    padding: 5px 20px;
+    background-color: rgb(38, 80, 97);
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1030px) {
     .header h1 {
-        font-size: 80px;
+        font-size: 60px;
     }
+
     .header h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
+
     .header {
         padding-bottom: 20%;
     }
@@ -740,114 +1818,533 @@ select{
     .intro h2 {
         font-size: 60px;
     }
-    .eleccion{
+
+    .eleccion {
         display: block;
     }
-    #botons{
+
+    #botons {
         display: block;
     }
-    .botones{
+
+    .botones {
         margin-top: 5%;
     }
-    .botones button{
+
+    .botones button {
         font-size: 13px;
         padding: 10px 10px;
         border-radius: 5px;
         margin-right: 2px;
     }
-    .eleccion h1{
+
+    .eleccion h1 {
         font-size: 20px;
     }
-    select{
+
+    select {
         font-size: 13px;
         padding: 5px;
     }
-    .estudiant{
+
+    .estudiant {
         height: 400px;
     }
-    .estudiant-info{
+
+    .estudiant-info {
         display: block;
         margin: auto;
         width: 100%;
         padding-top: 5%;
     }
-    .estudiant-info img{
+
+    .estudiant-info img {
         width: 45%;
         height: auto;
         display: flex;
         margin: auto;
     }
-    .estudiant-valores{
+
+    .estudiant-valores {
         width: 100%;
         margin-top: 8%;
     }
-    .estudiant-valores p{
+
+    .estudiant-valores p {
         font-size: 18px;
         text-align: center;
+        margin-bottom: 10px;
     }
-    br{
+
+    br {
         display: none;
     }
 
     /* indexP */
-    
-    .estudiants{
+
+    .estudiants {
         margin-bottom: 10%;
     }
-    .estudiants, .professors{
+
+    .estudiants,
+    .professors {
         width: 100%;
     }
-     .all{
+
+    .all {
         display: block;
     }
-    .text{
+
+    .text {
         margin-bottom: 5%;
     }
-    .text h1{
+
+    .text h1 {
         font-size: 35px;
     }
-    .text p{
+
+    .text p {
         font-size: 15px;
     }
+
     .button button{
-        font-size: 35px;
-        width: 80%;
+        padding: 7px 20px;
+        font-size: 20px;
     }
 
     /*info-professors*/
-    .info{
-        height: 600px;
+    .info {
         margin: 10%;
     }
-    .profe{
-        margin-top: 20%;
+
+    .info h1{
+        font-size: 25px;
     }
-    .profe p{
+
+    .profe p {
         font-size: 20px;
     }
 
     /*professors-projectes*/
-    .intro h2{
+    .intro h2 {
         font-size: 55px;
     }
 
-    .l-1{
+    .l-1 {
         display: block;
+        margin: 0px;
     }
-    .l-1 button{
+
+    .l-1 button {
         font-size: 20px;
-        padding: 10px 30px;
+        padding: 6px 20px;
+        margin-top: 150px;
+        margin-bottom: 20px;
     }
-    .l-1 form{
+
+    .l-1 form {
         display: block;
     }
-    .l-1 form div{
+
+    .l-1 form div {
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
     }
-    .l-1 form input{
+
+    .l-1 form input {
         width: 70%;
     }
+
+    .l-2{       
+        margin: 2% 10%;
+        margin-top: -180px;
+        margin-bottom: 100px;
+    }
+
     /*skills*/
+.skills{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin: auto;
+}
+
+/*more*/
+
+
+.info-boton button{
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+#prueba{
+    width: 350px;
+    height: auto;
+    padding: 10px;
+}
+
+#prueba form{
+    margin-top: 0px;
+}
+
+.estudiants-creacion div {
+    gap: 20px;
+}
+
+.estudiants-creacion div input {
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 2px;
+    border: 1px solid rgb(110, 110, 110);
+    width: 170px;
+}
+
+.estudiants-creacion div input[type="date"]{
+    width: 75px;
+}
+
+.estudiants-creacion div label{
+    font-size: 10px;
+}
+
+.estudiants-creacion {
+    gap: 10px;
+}
+
+#prueba h3{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+#prueba button{
+    padding: 3px 10px;
+    font-size: 15px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+.estudiants-creacion div label{
+    font-weight: 600;
+}
+
+#modificar{
+    width: 350px;
+    height: auto;
+}
+
+#modificar h3{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+#modificar button{
+    padding: 3px 10px;
+    font-size: 15px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+#modificar form{
+    margin-top: 5px;
+}
+
+.projecte{
+    width: auto;
+    margin: 10px 5px;
+}
+
+.projecte form button {
+    font-size: 17px;
+}
+
+.projecte span{
+    font-size: 12px;
+    margin-left: 0px;
+}
+
+.planaactivitats{
+    margin: 10px;
+    padding: 5px;
+}
+
+.activitats-top h3 {
+    font-size: 40px;
+    color: white;
+    font-weight: 400;
+}
+
+.activitats-top button{
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    
+}
+
+.activitats-nom span {
+    font-size: 15px;
+    font-family: 'josefin sans', sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.activitats-nom i {
+    font-size: 20px;
+    margin-right: 3px;
+}
+
+.activitats-icons button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.escollir button{
+    
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size:15px;
+}
+
+#escollirSkills{
+    width: 350px;
+    height: 220px;
+    
+}
+
+#escollirSkills button, #crearSkills button{
+    font-size: 15px !important;
+    padding: 5px 12px !important;
+}
+
+.crear-escollir-skills{
+    margin: 0px !important;
+    padding: 2px;
+    font-size: 10px;  
+}
+
+#escollirSkills h3, #crearSkills h3{
+    font-size: 20px;
+}
+
+.info-projecte{
+    padding: 15px 20px;
+}
+
+.info-projecte button{
+    font-size: 15px;
+    padding: 5px 2px;
+    border-radius: 3px;
+}
+
+.skills-container{
+    padding: 20px 30px;
+    gap: 5px;
+    display: block;
+}
+
+.skills-container p{
+    font-size: 20px;
+}
+
+.alumnes-container{
+    width: 250px;
+}
+
+.modificar-projecte{
+    width: 400px;
+    padding: 10px 0px;
+    height: auto;
+}
+
+.modificar-projecte h3{
+    font-size: 25px;
+}
+
+.modificar-projecte form{
+    width: 95%;
+    margin: 5px;
+}
+
+.modificar-projecte form div label{
+    font-size: 15px;
+}
+
+.modificar-projecte button{
+    padding: 5px 0px;
+    font-size: 15px;
+    width: 25%;
+}
+
+.modificar-projecte form div input{
+    font-size: 12px;
+    padding: 1px;
+}
+
+.borrar-skills{
+    padding: 10px;
+    width: 250px;
+}
+
+.borrar-skills h3{
+    font-size: 15px;
+}
+
+.crearActivitats{
+    width: 350px;
+    height: auto;
+}
+
+.crearActivitats h3{
+    font-size: 25px;
+}
+
+.crear-activitats-all{
+    width: 90%;
+    margin: 30px 20px;
+}
+
+.crear-activitats-all div label{
+    font-size: 15px;
+}
+.crear-activitats-all div{
+    margin: 0px;
+}
+
+.crear-activitats-all .nom input{
+    width: 200px;
+    font-size: 15px;
+}
+
+.crear-activitats-all-button button{
+    margin: auto;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.crear-activitats-all .select-skills div{
+    width: 200px;
+}
+
+.activitats-nom{
+    display: block;
+    height: auto;
+}
+
+.activitats-all{
+    padding: 0px;
+    margin: 0px;
+}
+
+.activitats-icons{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.skill-general {
+    margin: 0px 15%
+}
+
+.activitats form{
+    display: block;
+}
+
+.modificar-skills{
+    width: 350px;
+    height: auto;
+}
+
+.modificar-skills h3{
+    font-size: 20px;
+}
+
+.creando{
+    font-size: 15px;
+}
+
+.creando .nom {
+    gap: 10px;
+}
+
+.creando .icona{
+    gap: 10px;
+}
+
+.modificar-skills button{
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 1px solid white;
+
+}
+
+#escollir-alumnes{
+
+    width: 370px;
+    height: auto;
+}
+
+#escollir-alumnes h3{
+    font-size: 25px;
+}
+
+.seleccio-alumnat{
+    width: 90%;
+    margin: 2px;
+    justify-content: left;
+}
+
+.seleccio-alumnat label{
+    font-size: 13px;
+}
+.escollir-alumnes-seleccio{
+    overflow-y: auto;
+}
+
+.formulari p{
+    margin: 10px 0px;
+}
+
+.validacio-activitat label{
+    font-size: 15px;
+}
+
+.validacio-activitat button{
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.crear form label{
+    font-size: 15px;
+}
+
+.crear form input{
+    padding: 2px;
+    font-size: 15px;
+}
+
+.alumnes-modificar-projecte{
+    margin-left: 5% !important;
+}
+
+.skills-projecte-all{
+    margin-left: 5% !important;
+}
+
+.validacio-activitat input{
+    width: 30px;
+}
+
 }
