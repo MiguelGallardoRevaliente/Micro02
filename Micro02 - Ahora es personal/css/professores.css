@@ -603,7 +603,8 @@ input[type="text"] {
 }
 
 
-#escollirSkills {
+#escollirSkills,
+#escollirSkills2{
     background-image: url(../img/blanco-naranjajpg.jpg);
     position: fixed;
     top: 50%;
@@ -657,6 +658,7 @@ input[type="text"] {
     display: none;
 }
 
+#escollirSkills2 h3
 #escollirSkills h3,
 #crearSkills h3 {
     font-size: 30px;
@@ -669,6 +671,7 @@ input[type="text"] {
     font-family: 'josefin sans', sans-serif;
 }
 
+#escollirSkills2 form,
 #escollirSkills form,
 #crearSkills form {
     display: flex;
@@ -680,6 +683,7 @@ input[type="text"] {
 
 }
 
+#escollirSkills2 button,
 #escollirSkills button,
 #crearSkills button {
     background-color: darkorange;

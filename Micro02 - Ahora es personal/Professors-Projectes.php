@@ -381,8 +381,7 @@
         if (isset($_POST['crearActivitats'])) {
             $llargada = $_POST['llargada'];
             for ($i = 0; $i < $llargada; $i++) {
-                $hola = "skill" . $i;
-                $skill = $_POST[$hola];
+                $skill = $_POST["skill"];
                 $nomActivitat = $_POST['nom'];
                 $nomActivitat = filter_var(strip_tags($nomActivitat), FILTER_SANITIZE_STRING);
                 $id_projecte = $_POST['id_projecte'];
@@ -398,7 +397,6 @@
                     while ($fila = mysqli_fetch_assoc($id_res)) {
                         $nom_activitat = $fila['nom'];
                         if ($nom_activitat == $nomActivitat) {
-                            echo "<script>alert('Ja existeix una activitat amb aquest nom')</script>";
                             $contador++;
                         }
                     }
@@ -1421,7 +1419,7 @@
                                                                         $nom = $fila3['nom'];
                                                                         $nomPercentatge = $nom . " " . $percentatge . "%";
                                                                         echo "<div style='margin-bottom: 5px;' class='skill'>";
-                                                                        echo "<input type='radio' name='skill" . $i . "' value='" . $nom . "'>";
+                                                                        echo "<input type='radio' name='skill' value='" . $nom . "'>";
                                                                         echo "<label for=''>$nomPercentatge</label>";
                                                                         echo "</div>";
                                                                         $i++;
